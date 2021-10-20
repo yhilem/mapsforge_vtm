@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2019 devemux86
+ * Copyright 2016-2021 devemux86
  * Copyright 2018 Longri
  *
  * This program is free software: you can redistribute it and/or modify it under the
@@ -134,7 +134,7 @@ public class LocationTextureActivity extends BitmapTileActivity implements Locat
     private void enableAvailableProviders() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 0);
                 return;
             }
         }
