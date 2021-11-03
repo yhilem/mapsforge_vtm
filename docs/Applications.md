@@ -10,13 +10,13 @@
 | [HabanaTrans](https://play.google.com/store/apps/details?id=cu.pabloapk.habanatrans&hl=es_419) | Public transport, map offline, gps, routing | Proprietary/Free | Android | Closed |
 | [Hunt Cyprus](https://play.google.com/store/apps/developer?id=Talent+S.A.) | Map and navigation application for hunters | Proprietary/Free and Commercial | Android | Closed |
 | [Kurviger](https://kurviger.de/en) | Route planner specialized on motorcyclists | Proprietary/Free (in-app purchases) | Android | Closed |
-| [MapTrek](http://maptrek.mobi) | Application for outdoor activities | GPL3/Free and Commercial | Android | Open |
 | [MyRunningApp](https://play.google.com/store/apps/details?id=it.nimarsolutions.rungpstracker) | Fitness app | Proprietary/Free | Android | Closed |
 | [MyTourbook](http://mytourbook.sourceforge.net/mytourbook/) | Visualize and analyze tours | GPL2/Free | Desktop | Open |
 | [Navi Cyprus](https://play.google.com/store/apps/developer?id=Talent+S.A.) | Map and navigation application | Proprietary/Free and Commercial | Android | Closed |
 | [Pocket Maps](https://github.com/junjunguo/PocketMaps) | Offline maps, routing & tracking functions | MIT/Free | Android | Open |
 | Tokyo Ogiqvo | Visualize App | Commercial | [Android](https://play.google.com/store/apps/details?id=com.ogiqvo.view.tokyo&hl=ja), [iOS](https://itunes.apple.com/us/app/tokyo-ogiqvo/id1097100677?mt=8) | Closed |
 | [topoGuide](http://www.topoguide.gr/index-en.php) | Digital guides for the outdoor | Proprietary/Free and Commercial | Android | Closed |
+| [Trekarta](https://github.com/andreynovikov/trekarta) | Application for outdoor activities | GPL3/Free and Commercial | Android | Open |
 | [Ubitrek](https://play.google.com/store/apps/details?id=ubicarta.ubitrek) | Hiking with IGN maps | Proprietary/Free | Android | Closed |
 | [VTM with Eclipse RCP](https://github.com/wolfgang-ch/vtm-with-rcp) | VTM with an Eclipse RCP application | GPL3/Free | Desktop | Open |
 | [Walkaholic](https://play.google.com/store/apps/details?id=com.walkaholic.hikeapp) | Hiking app with official routes and online/offline maps | Proprietary/Free (in-app purchases) | Android | Closed |
