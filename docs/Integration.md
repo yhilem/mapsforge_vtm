@@ -140,15 +140,12 @@ implementation('com.github.jeo.jeo:jeo-carto:master-SNAPSHOT') {
 
 ## Snapshots
 
-Clone this repository and run:
-```bash
-gradlew install
-```
+We publish SNAPSHOT builds to Sonatype OSS Repository Hosting.
 
 You need to add the repository:
 ```groovy
 repositories {
-    mavenLocal()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 ```
 
@@ -179,6 +176,6 @@ The dependencies for Maven are declared in a similar way. For example:
 
 ## Jars
 
-You can find jars (regular and with dependencies) in [Maven Central](https://search.maven.org/search?q=g:org.mapsforge).
+You can find release and snapshot jars (regular and with dependencies) in [Maven Central](https://search.maven.org/search?q=g:org.mapsforge) and [Sonatype OSS Repository Hosting](https://oss.sonatype.org/content/repositories/snapshots/org/mapsforge/).
 
 Third party jars can be found at their respective sites or in Maven Central repository.

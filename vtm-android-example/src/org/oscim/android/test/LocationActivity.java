@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2019 devemux86
+ * Copyright 2016-2021 devemux86
  *
  * This program is free software: you can redistribute it and/or modify it under the
  * terms of the GNU Lesser General Public License as published by the Free Software
@@ -96,6 +96,7 @@ public class LocationActivity extends BitmapTileActivity implements LocationList
     public void onProviderEnabled(String provider) {
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
     }
@@ -103,7 +104,7 @@ public class LocationActivity extends BitmapTileActivity implements LocationList
     private void enableAvailableProviders() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 0);
                 return;
             }
         }
