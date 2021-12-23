@@ -6,7 +6,7 @@
 - Drawable style texture repeat option [#862](https://github.com/mapsforge/vtm/pull/862)
 - Draggable marker Android sample [#869](https://github.com/mapsforge/vtm/pull/869)
 - Move cluster experiment in samples [#858](https://github.com/mapsforge/vtm/pull/858)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.17.0)
 
 ## Version 0.16.0 (2021-05-27)
@@ -17,7 +17,7 @@
 - Nautical unit adapter with feet [#803](https://github.com/mapsforge/vtm/pull/803)
 - Distant labels rendering option [#844](https://github.com/mapsforge/vtm/pull/844)
   - `Parameters.DISTANT_LABELS`
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.16.0)
 
 ## Version 0.15.0 (2021-01-01)
@@ -28,7 +28,7 @@
 - Render theme xml pull parser [#786](https://github.com/mapsforge/vtm/pull/786)
 - Symbol scale option [#790](https://github.com/mapsforge/vtm/pull/790)
   - `Parameters.SYMBOL_SCALING`
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.15.0)
 
 ## Version 0.14.0 (2020-08-25)
@@ -38,7 +38,7 @@
 - Marker renderer sort option
   - `Parameters.MARKER_SORT`
 - Update vtm-jeo module [#770](https://github.com/mapsforge/vtm/pull/770)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.14.0)
 
 ## Version 0.13.0 (2020-01-12)
@@ -53,7 +53,7 @@
   - `MapView.OPENGL_VERSION`
 - Android: threaded system initialization
   - `Parameters.THREADED_INIT`
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.13.0)
 
 ## Version 0.12.0 (2019-09-17)
@@ -70,14 +70,14 @@
   - `Parameters.POLY_LABEL`
 - Android 10 compatibility [#728](https://github.com/mapsforge/vtm/issues/728)
 - libGDX 1.9.10 [#731](https://github.com/mapsforge/vtm/issues/731)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.12.0)
 
 ## Version 0.11.1 (2019-04-12)
 
 - MBTiles raster tile source (Android) [#708](https://github.com/mapsforge/vtm/pull/708)
 - Fix Android 4.2 crash [#713](https://github.com/mapsforge/vtm/issues/713)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.11.1)
 
 ## Version 0.11.0 (2019-03-25)
@@ -103,7 +103,7 @@
 - OpenGL ES 3.0 support [#646](https://github.com/mapsforge/vtm/issues/646)
 - OpenGL ES 2.0 complete [#642](https://github.com/mapsforge/vtm/pull/642)
 - libGDX 1.9.9 [#635](https://github.com/mapsforge/vtm/issues/635)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.11.0)
 
 ## Version 0.10.0 (2018-08-28)
@@ -139,7 +139,7 @@
 - Android 9 compatibility [#550](https://github.com/mapsforge/vtm/issues/550)
 - JTS (LocationTech) [#484](https://github.com/mapsforge/vtm/issues/484)
 - SVG Salamander (JitPack) [#560](https://github.com/mapsforge/vtm/issues/560)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.10.0)
 
 ## Version 0.9.2 (2018-01-04)
@@ -152,7 +152,7 @@
 
 - LwHttp engine fix http headers [#460](https://github.com/mapsforge/vtm/issues/460)
 - S3DBLayer renamed to S3DBTileLayer [#452](https://github.com/mapsforge/vtm/issues/452)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.9.1)
 
 ## Version 0.9.0 (2017-12-03)
@@ -181,7 +181,7 @@
 - Gradle 4 / Android plugin 3 support [#433](https://github.com/mapsforge/vtm/issues/433)
 - libGDX 1.9.7 [#434](https://github.com/mapsforge/vtm/issues/434)
 - Internal render themes various improvements [#41](https://github.com/mapsforge/vtm/issues/41)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.9.0)
 
 ## Version 0.8.0 (2017-07-19)
@@ -207,7 +207,7 @@
 - Gretty plugin at web modules [#338](https://github.com/mapsforge/vtm/issues/338)
 - libGDX 1.9.6 [#333](https://github.com/mapsforge/vtm/issues/333)
 - Internal render themes various improvements [#41](https://github.com/mapsforge/vtm/issues/41)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.8.0)
 
 ## Version 0.7.0 (2017-02-26)
@@ -235,7 +235,7 @@
 - Fix theme parsing in non-Latin locales [#297](https://github.com/mapsforge/vtm/issues/297)
 - libGDX 1.9.5 [#270](https://github.com/mapsforge/vtm/issues/270)
 - Internal render themes various improvements [#41](https://github.com/mapsforge/vtm/issues/41)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.7.0)
 
 ## Version 0.6.0 (2016-10-28) - VTM revival
@@ -266,5 +266,5 @@
 - SNAPSHOT builds publish to Sonatype OSSRH [#165](https://github.com/mapsforge/vtm/issues/165)
 - libGDX 1.9.4 [#164](https://github.com/mapsforge/vtm/issues/164)
 - Internal render themes various improvements [#41](https://github.com/mapsforge/vtm/issues/41)
-- Many other minor improvements and bug fixes
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.6.0)
