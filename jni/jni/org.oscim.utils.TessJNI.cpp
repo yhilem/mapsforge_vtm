@@ -23,7 +23,7 @@
 //@line:131
  {
 		if (size <= 0)
-		   return (long)tessNewTess(0);
+		   return (jlong)tessNewTess(0);
 		if (size > 10)
 			size = 10;
 		TESSalloc ma;
@@ -39,7 +39,7 @@
 		ma.regionBucketSize = 1 << size;	 // 256
 		ma.extraVertices = 8;
 	    //ma.extraVertices = 256;
-	    return (long)tessNewTess(&ma);
+	    return (jlong)tessNewTess(&ma);
 	} 
 
 }
