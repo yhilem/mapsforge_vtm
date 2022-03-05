@@ -4,6 +4,7 @@
 
 - Mapsforge: deduplicate maps [#903](https://github.com/mapsforge/vtm/pull/903)
 - Fix overlapping map regions [#903](https://github.com/mapsforge/vtm/pull/903) [#905](https://github.com/mapsforge/vtm/pull/905)
+- Fix `vtm-jni64.dll` [#911](https://github.com/mapsforge/vtm/pull/911)
 - Mapsforge: simplification exceptions [#906](https://github.com/mapsforge/vtm/pull/906)
   - `Parameters.SIMPLIFICATION_EXCEPTIONS`
 - Minor improvements and bug fixes
