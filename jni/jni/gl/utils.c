@@ -102,7 +102,7 @@ matrix4_proj2D(float* mat, float* vec, float *out);
 
 jlong JNI(alloc)(JNIEnv *env, jclass* clazz)
 {
-  return (long) calloc(16, sizeof(float));
+  return (jlong) calloc(16, sizeof(float));
 }
 
 jobject JNI(getBuffer)(JNIEnv *env, jclass* clazz,jlong ptr){
