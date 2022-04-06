@@ -29,6 +29,7 @@ If you have any questions or problems, don't hesitate to ask the Discussions for
   - iOS (libGDX/RoboVM, [instructions](docs/ios.md))
   - Desktop (libGDX/LWJGL, [instructions](docs/desktop.md))
   - HTML5/WebGL (libGDX/GWT, [instructions](docs/web.md))
+- Building VTM: set `ANDROID_HOME` environment variable with the Android SDK installation directory
 
 ### Projects
 - **vtm** core library
