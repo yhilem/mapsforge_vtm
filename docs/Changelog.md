@@ -1,6 +1,11 @@
 # Changelog
 
-## New since 0.17.0
+## New since 0.18.0
+
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.19.0)
+
+## Version 0.18.0 (2022-06-18)
 
 - Mapsforge: deduplicate maps [#903](https://github.com/mapsforge/vtm/pull/903)
 - Fix overlapping map regions [#903](https://github.com/mapsforge/vtm/pull/903) [#905](https://github.com/mapsforge/vtm/pull/905)
