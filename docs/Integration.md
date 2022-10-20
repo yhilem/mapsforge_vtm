@@ -16,27 +16,27 @@ implementation 'org.slf4j:slf4j-api:1.7.28'
 
 ### Android
 ```groovy
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-armeabi-v7a'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-arm64-v8a'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86_64'
+implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]'
 implementation 'com.caverock:androidsvg:1.4'
 ```
 
 ### Android (libGDX)
 ```groovy
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-armeabi-v7a'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-arm64-v8a'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86_64'
+implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]'
 implementation 'org.mapsforge:vtm-gdx:[CURRENT-VERSION]'
-implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]'
 implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-armeabi-v7a'
 implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-arm64-v8a'
 implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-x86'
 implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-x86_64'
+implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]'
 implementation 'com.badlogicgames.gdx:gdx:1.9.10'
 implementation 'com.badlogicgames.gdx:gdx-backend-android:1.9.10'
 implementation 'com.caverock:androidsvg:1.4'
