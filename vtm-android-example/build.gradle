@@ -58,7 +58,7 @@ android {
     lintOptions { abortOnError false }
 
     packagingOptions {
-        exclude 'META-INF/services/org.jeo.data.Driver'
+        exclude 'META-INF/services/io.jeo.data.Driver'
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
     }
