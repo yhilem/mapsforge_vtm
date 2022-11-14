@@ -563,7 +563,7 @@ public class IosGL implements GL {
                 program,
                 index,
                 size,
-                type);
+                (IntBuffer) type);
     }
 
     @Override
@@ -572,7 +572,7 @@ public class IosGL implements GL {
                 program,
                 index,
                 size,
-                type);
+                (IntBuffer) type);
     }
 
     @Override

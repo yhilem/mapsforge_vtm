@@ -276,5 +276,4 @@ public class InputHandler implements InputProcessor {
         }
         return false;
     }
-
 }

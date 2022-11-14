@@ -222,7 +222,7 @@ public class AndroidGL implements GL {
 
     @Override
     public String getActiveUniform(int program, int index, IntBuffer size, Buffer type) {
-        return androidGL.glGetActiveUniform(program, index, size, type);
+        return androidGL.glGetActiveUniform(program, index, size, (IntBuffer) type);
     }
 
     @Override

@@ -17,21 +17,15 @@ package org.oscim.ios.backend;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
-
 import org.oscim.backend.AssetAdapter;
 import org.oscim.backend.GL;
 import org.oscim.backend.canvas.Bitmap;
 import org.oscim.backend.canvas.Color;
-import org.robovm.apple.coregraphics.CGBitmapContext;
-import org.robovm.apple.coregraphics.CGBlendMode;
-import org.robovm.apple.coregraphics.CGColor;
-import org.robovm.apple.coregraphics.CGColorSpace;
-import org.robovm.apple.coregraphics.CGImage;
-import org.robovm.apple.coregraphics.CGImageAlphaInfo;
-import org.robovm.apple.coregraphics.CGRect;
+import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.foundation.NSData;
 import org.robovm.apple.uikit.UIColor;
 import org.robovm.apple.uikit.UIImage;
+import org.robovm.rt.VM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +33,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.Buffer;
+import java.nio.ByteOrder;
 
 /**
  * iOS specific implementation of {@link Bitmap}.
@@ -217,7 +212,7 @@ public class IosBitmap implements Bitmap {
             glFormat = pixmap.getGLFormat();
             glType = pixmap.getGLType();
 
-            directPixelBuffer = cgBitmapContext.getData().asIntBuffer(encodedData.length / 4);
+            directPixelBuffer = VM.newDirectByteBuffer(cgBitmapContext.getData(), (encodedData.length / 4) << 2).order(ByteOrder.nativeOrder()).asIntBuffer();
             pixmap.dispose();
 
         }
@@ -256,10 +251,10 @@ public class IosBitmap implements Bitmap {
      */
     static CGColor getCGColor(int color) {
         return UIColor.fromRGBA(
-                Color.a(color),
-                Color.g(color),
-                Color.b(color),
-                Color.r(color))
+                        Color.a(color),
+                        Color.g(color),
+                        Color.b(color),
+                        Color.r(color))
                 .getCGColor();
     }
 
