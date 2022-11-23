@@ -27,15 +27,15 @@ public class MapConfig extends JavaScriptObject {
     }-*/;
 
     public final native double getLatitude() /*-{
-        return this.latitude || 0;
+        return this.latitude || 53.075;
     }-*/;
 
     public final native double getLongitude() /*-{
-        return this.longitude || 0;
+        return this.longitude || 8.806;
     }-*/;
 
     public final native int getZoom() /*-{
-        return this.zoom || 2;
+        return this.zoom || 17;
     }-*/;
 
     public final native String getTileSource() /*-{
