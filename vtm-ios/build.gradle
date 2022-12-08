@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.7'
+        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.18'
     }
 }
 
@@ -16,7 +16,7 @@ sourceSets.main.java.srcDirs = ["src/"]
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 ext {
-    roboVMVersion = "2.3.7"
+    roboVMVersion = "2.3.18"
 }
 
 launchIPhoneSimulator.dependsOn build

@@ -33,7 +33,6 @@ import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.webgl.client.WebGLContextAttributes;
 import com.google.gwt.webgl.client.WebGLRenderingContext;
-
 import org.oscim.gdx.client.GdxGL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -182,6 +181,31 @@ public class GwtGraphics implements Graphics {
     @Override
     public int getBackBufferHeight() {
         return canvas.getHeight();
+    }
+
+    @Override
+    public float getBackBufferScale() {
+        return 0;
+    }
+
+    @Override
+    public int getSafeInsetLeft() {
+        return 0;
+    }
+
+    @Override
+    public int getSafeInsetTop() {
+        return 0;
+    }
+
+    @Override
+    public int getSafeInsetBottom() {
+        return 0;
+    }
+
+    @Override
+    public int getSafeInsetRight() {
+        return 0;
     }
 
     @Override
@@ -518,6 +542,11 @@ public class GwtGraphics implements Graphics {
     }
 
     @Override
+    public void setForegroundFPS(int fps) {
+
+    }
+
+    @Override
     public float getDensity() {
         return 96.0f / 160;
     }
@@ -535,6 +564,7 @@ public class GwtGraphics implements Graphics {
     public void requestRendering() {
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public float getRawDeltaTime() {
         return getDeltaTime();

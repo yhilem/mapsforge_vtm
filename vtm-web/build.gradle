@@ -14,7 +14,7 @@ apply plugin: 'gwt-base'
 sourceSets {
     // Exclude nested folder 'emu' from 'src' and add it manually
     main.java.srcDirs = ['src', 'src/org/oscim/gdx/emu']
-    main.java.exclude '**/emu/**'
+//    main.java.exclude '**/emu/**'
 }
 
 dependencies {

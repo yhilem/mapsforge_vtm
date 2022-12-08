@@ -3,7 +3,8 @@
 |**Name**|**Type**|**License/Cost**|**Platforms**|**Sources**|
 |--------|--------|----------------|-------------|-----------|
 | [AdvRider WD](https://play.google.com/store/apps/details?id=com.abware.watchdog_client) |  Tool-set for the adventure rider | Proprietary/Free | Android | Closed |
-| [Cachebox 3.0](https://github.com/Longri/cachebox3.0) | Geocaching application | Apache 2.0/Free | Android, Desktop, iOS | Open |
+| [Cachebox 3.0](https://github.com/Longri/cachebox3.0) | Geocaching application | Apache 2.0/Free | Android, iOS, Desktop | Open |
+| [Cartograph Maps 3](https://www.cartograph.eu) | Map viewing and track recording | Proprietary/Free (in-app purchases) | Android, iOS, Desktop | Closed |
 | [Cruiser](https://wiki.openstreetmap.org/wiki/Cruiser) | Map and navigation platform | Proprietary/Free | Android, Desktop | Closed |
 | [GCDroid](https://play.google.com/store/apps/details?id=com.gcdroid) | Geocaching App | Proprietary/Free and Commercial | Android | Closed |
 | [GPSLogger II](https://play.google.com/store/apps/details?id=com.emacberry.gpslogger) | Map and navigation, Fitness & Cycling application | Proprietary/Free | Android | Closed |
