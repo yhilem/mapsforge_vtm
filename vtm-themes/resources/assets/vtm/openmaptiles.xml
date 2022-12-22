@@ -220,7 +220,7 @@
         </m>
     </m>
 
-    <!-- TODO aeroway, but is also missing from regular Kurviger theme -->
+    <!-- TODO aeroway -->
 
     <m k="layer" v="waterway">
         <m k="class">
