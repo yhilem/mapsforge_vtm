@@ -16,26 +16,26 @@ implementation 'org.slf4j:slf4j-api:1.7.28'
 
 ### Android
 ```groovy
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-armeabi-v7a'
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-arm64-v8a'
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86'
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86_64'
+runtimeOnly 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-armeabi-v7a'
+runtimeOnly 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-arm64-v8a'
+runtimeOnly 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86'
+runtimeOnly 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86_64'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]'
 implementation 'com.caverock:androidsvg:1.4'
 ```
 
 ### Android (libGDX)
 ```groovy
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-armeabi-v7a'
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-arm64-v8a'
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86'
-implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86_64'
+runtimeOnly 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-armeabi-v7a'
+runtimeOnly 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-arm64-v8a'
+runtimeOnly 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86'
+runtimeOnly 'org.mapsforge:vtm-android:[CURRENT-VERSION]:natives-x86_64'
 implementation 'org.mapsforge:vtm-android:[CURRENT-VERSION]'
 implementation 'org.mapsforge:vtm-gdx:[CURRENT-VERSION]'
-implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-armeabi-v7a'
-implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-arm64-v8a'
-implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-x86'
-implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-x86_64'
+runtimeOnly 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-armeabi-v7a'
+runtimeOnly 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-arm64-v8a'
+runtimeOnly 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-x86'
+runtimeOnly 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]:natives-x86_64'
 implementation 'org.mapsforge:vtm-android-gdx:[CURRENT-VERSION]'
 implementation 'com.badlogicgames.gdx:gdx:1.11.0'
 implementation 'com.badlogicgames.gdx:gdx-backend-android:1.11.0'
@@ -50,11 +50,11 @@ Detailed iOS instructions can be found [here](ios.md).
 ```groovy
 implementation 'org.mapsforge:vtm-gdx:[CURRENT-VERSION]'
 implementation 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]'
-implementation 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]:natives-linux'
-implementation 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]:natives-osx'
-implementation 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]:natives-windows'
+runtimeOnly 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]:natives-linux'
+runtimeOnly 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]:natives-osx'
+runtimeOnly 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]:natives-windows'
 implementation 'com.badlogicgames.gdx:gdx:1.11.0'
-implementation 'com.badlogicgames.gdx:gdx-platform:1.11.0:natives-desktop'
+runtimeOnly 'com.badlogicgames.gdx:gdx-platform:1.11.0:natives-desktop'
 implementation 'com.formdev:svgSalamander:1.1.3'
 ```
 
@@ -63,9 +63,9 @@ implementation 'com.formdev:svgSalamander:1.1.3'
 implementation 'org.mapsforge:vtm-desktop-lwjgl:[CURRENT-VERSION]'
 implementation 'com.badlogicgames.gdx:gdx-backend-lwjgl:1.11.0'
 implementation 'org.lwjgl.lwjgl:lwjgl:2.9.3'
-implementation 'org.lwjgl.lwjgl:lwjgl-platform:2.9.3:natives-linux'
-implementation 'org.lwjgl.lwjgl:lwjgl-platform:2.9.3:natives-osx'
-implementation 'org.lwjgl.lwjgl:lwjgl-platform:2.9.3:natives-windows'
+runtimeOnly 'org.lwjgl.lwjgl:lwjgl-platform:2.9.3:natives-linux'
+runtimeOnly 'org.lwjgl.lwjgl:lwjgl-platform:2.9.3:natives-osx'
+runtimeOnly 'org.lwjgl.lwjgl:lwjgl-platform:2.9.3:natives-windows'
 ```
 
 ### Desktop (LWJGL 3)
@@ -73,9 +73,9 @@ implementation 'org.lwjgl.lwjgl:lwjgl-platform:2.9.3:natives-windows'
 implementation 'org.mapsforge:vtm-desktop-lwjgl3:[CURRENT-VERSION]'
 implementation 'com.badlogicgames.gdx:gdx-backend-lwjgl3:1.11.0'
 implementation 'org.lwjgl:lwjgl:3.3.1'
-implementation 'org.lwjgl:lwjgl:3.3.1:natives-linux'
-implementation 'org.lwjgl:lwjgl:3.3.1:natives-macos'
-implementation 'org.lwjgl:lwjgl:3.3.1:natives-windows'
+runtimeOnly 'org.lwjgl:lwjgl:3.3.1:natives-linux'
+runtimeOnly 'org.lwjgl:lwjgl:3.3.1:natives-macos'
+runtimeOnly 'org.lwjgl:lwjgl:3.3.1:natives-windows'
 ```
 
 ### JTS geometries
