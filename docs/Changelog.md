@@ -2,8 +2,8 @@
 
 ## New since 0.18.0
 
-- Render themes: line texture improvements [#983](https://github.com/mapsforge/vtm/issues/983) [#985](https://github.com/mapsforge/vtm/issues/985)
-- Biker theme [#995](https://github.com/mapsforge/vtm/pull/995)
+- Render themes: line texture improvements [#1008](https://github.com/mapsforge/vtm/pull/1008)
+- Biker map theme [#995](https://github.com/mapsforge/vtm/pull/995)
 - MVT simplification [#956](https://github.com/mapsforge/vtm/pull/956)
   - `Parameters.SIMPLIFICATION_TOLERANCE`, `Parameters.SIMPLIFICATION_EXCEPTIONS`
 - libGDX 1.11.0 [#972](https://github.com/mapsforge/vtm/pull/972) [#977](https://github.com/mapsforge/vtm/pull/977)
