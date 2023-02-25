@@ -136,7 +136,7 @@ public class Inlist<T extends Inlist<T>> {
         @Override
         public T next() {
             if (cur == null)
-                throw new IllegalStateException();
+                throw new IllegalStateException("'cur' item is null");
 
             Inlist tmp = cur;
             cur = cur.next;
