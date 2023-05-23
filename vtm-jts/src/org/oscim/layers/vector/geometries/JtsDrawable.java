@@ -20,6 +20,7 @@ public class JtsDrawable implements Drawable {
 
     protected Style style;
     protected Geometry geometry;
+    protected int priority = 0;
 
     public JtsDrawable(Style style) {
         this.style = style;
@@ -51,6 +52,15 @@ public class JtsDrawable implements Drawable {
     @Override
     public Geometry getGeometry() {
         return geometry;
+    }
+
+    @Override
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
     }
 
     protected static GeomBuilder loadPoints(GeomBuilder gb, List<GeoPoint> points) {
