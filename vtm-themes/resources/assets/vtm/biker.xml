@@ -38,7 +38,7 @@
             <name lang="nl" value="Gezondheid" />
             <cat id="health" />
         </layer>
-        <layer enabled="true" id="fuel">
+        <layer id="fuel">
             <name lang="ar" value="محطات وقود" />
             <name lang="de" value="Tankstellen" />
             <name lang="el" value="Πρατήρια καυσίμων" />

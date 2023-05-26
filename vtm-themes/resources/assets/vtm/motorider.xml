@@ -19,17 +19,6 @@
             <name lang="nl" value="Onderkomen" />
             <cat id="accommodation" />
         </layer>
-        <layer id="charging_station">
-            <name lang="ar" value="محطات شحن" />
-            <name lang="de" value="Ladestationen" />
-            <name lang="el" value="Πρατήρια φόρτισης" />
-            <name lang="en" value="Charging stations" />
-            <name lang="es" value="Estaciones de carga" />
-            <name lang="fr" value="Stations de charge" />
-            <name lang="it" value="Stazioni di carica" />
-            <name lang="nl" value="Laadstations" />
-            <cat id="charging_station" />
-        </layer>
         <layer id="food">
             <name lang="ar" value="طعام" />
             <name lang="de" value="Lebensmittel" />
@@ -40,17 +29,6 @@
             <name lang="it" value="Alimentari" />
             <name lang="nl" value="Eten" />
             <cat id="food" />
-        </layer>
-        <layer enabled="true" id="fuel">
-            <name lang="ar" value="محطات وقود" />
-            <name lang="de" value="Tankstellen" />
-            <name lang="el" value="Πρατήρια καυσίμων" />
-            <name lang="en" value="Fuel stations" />
-            <name lang="es" value="Estaciones de combustible" />
-            <name lang="fr" value="Stations de carburant" />
-            <name lang="it" value="Stazioni di carburante" />
-            <name lang="nl" value="Tankstations" />
-            <cat id="fuel" />
         </layer>
         <layer id="health">
             <name lang="ar" value="رعاية صحية" />
@@ -63,27 +41,38 @@
             <name lang="nl" value="Gezondheid" />
             <cat id="health" />
         </layer>
-        <layer id="housenumber">
-            <name lang="ar" value="أرقام المنازل" />
-            <name lang="de" value="Hausnummern" />
-            <name lang="el" value="Αριθμοί κατοικιών" />
-            <name lang="en" value="House numbers" />
-            <name lang="es" value="Números de casa" />
-            <name lang="fr" value="Numéros de maison" />
-            <name lang="it" value="Numeri civici" />
-            <name lang="nl" value="Huis nummers" />
-            <cat id="housenumber" />
+        <layer id="fuel">
+            <name lang="ar" value="محطات وقود" />
+            <name lang="de" value="Tankstellen" />
+            <name lang="el" value="Πρατήρια καυσίμων" />
+            <name lang="en" value="Fuel stations" />
+            <name lang="es" value="Estaciones de combustible" />
+            <name lang="fr" value="Stations de carburant" />
+            <name lang="it" value="Stazioni di carburante" />
+            <name lang="nl" value="Tankstations" />
+            <cat id="fuel" />
         </layer>
-        <layer id="motorcycle_shop">
-            <name lang="ar" value="متاجر الدراجات النارية" />
-            <name lang="de" value="Motorradwerkstätten" />
-            <name lang="el" value="Καταστήματα μοτοσικλετών" />
-            <name lang="en" value="Motorcycle shops" />
-            <name lang="es" value="Tiendas de motos" />
-            <name lang="fr" value="Magasins de motos" />
-            <name lang="it" value="Negozi di moto" />
-            <name lang="nl" value="Motorwinkels" />
-            <cat id="motorcycle_shop" />
+        <layer id="charging_station">
+            <name lang="ar" value="محطات شحن" />
+            <name lang="de" value="Ladestationen" />
+            <name lang="el" value="Πρατήρια φόρτισης" />
+            <name lang="en" value="Charging stations" />
+            <name lang="es" value="Estaciones de carga" />
+            <name lang="fr" value="Stations de charge" />
+            <name lang="it" value="Stazioni di carica" />
+            <name lang="nl" value="Laadstations" />
+            <cat id="charging_station" />
+        </layer>
+        <layer id="parking">
+            <name lang="ar" value="مواقف" />
+            <name lang="de" value="Parkplätze" />
+            <name lang="el" value="Χώροι στάθμευσης" />
+            <name lang="en" value="Parking areas" />
+            <name lang="es" value="Estacionamientos" />
+            <name lang="fr" value="Aires de stationnement" />
+            <name lang="it" value="Aree di parcheggio" />
+            <name lang="nl" value="Parkeerplaatsen" />
+            <cat id="parking" />
         </layer>
         <layer id="mountain_pass">
             <name lang="ar" value="معابر جبلية" />
@@ -107,16 +96,16 @@
             <name lang="nl" value="Bergpieken" />
             <cat id="mountain_peak" />
         </layer>
-        <layer id="parking">
-            <name lang="ar" value="مواقف" />
-            <name lang="de" value="Parkplätze" />
-            <name lang="el" value="Χώροι στάθμευσης" />
-            <name lang="en" value="Parking areas" />
-            <name lang="es" value="Estacionamientos" />
-            <name lang="fr" value="Aires de stationnement" />
-            <name lang="it" value="Aree di parcheggio" />
-            <name lang="nl" value="Parkeerplaatsen" />
-            <cat id="parking" />
+        <layer id="motorcycle_shop">
+            <name lang="ar" value="متاجر الدراجات النارية" />
+            <name lang="de" value="Motorradwerkstätten" />
+            <name lang="el" value="Καταστήματα μοτοσικλετών" />
+            <name lang="en" value="Motorcycle shops" />
+            <name lang="es" value="Tiendas de motos" />
+            <name lang="fr" value="Magasins de motos" />
+            <name lang="it" value="Negozi di moto" />
+            <name lang="nl" value="Motorwinkels" />
+            <cat id="motorcycle_shop" />
         </layer>
         <layer id="attraction">
             <name lang="ar" value="أماكن جذب سياحي" />
@@ -129,17 +118,6 @@
             <name lang="nl" value="Touristische attracties" />
             <cat id="attraction" />
         </layer>
-        <layer enabled="true" id="nature">
-            <name lang="ar" value="الغطاء النباتي" />
-            <name lang="de" value="Vegetation" />
-            <name lang="el" value="Βλάστηση" />
-            <name lang="en" value="Vegetation" />
-            <name lang="es" value="Vegetación" />
-            <name lang="fr" value="Végétation" />
-            <name lang="it" value="Vegetazione" />
-            <name lang="nl" value="Vegetatie" />
-            <cat id="nature" />
-        </layer>
         <layer id="view">
             <name lang="ar" value="مطلات" />
             <name lang="de" value="Aussichtspunkte" />
@@ -151,20 +129,42 @@
             <name lang="nl" value="Uitzichtspunten" />
             <cat id="view" />
         </layer>
+        <layer id="housenumber">
+            <name lang="ar" value="أرقام المنازل" />
+            <name lang="de" value="Hausnummern" />
+            <name lang="el" value="Αριθμοί κατοικιών" />
+            <name lang="en" value="House numbers" />
+            <name lang="es" value="Números de casa" />
+            <name lang="fr" value="Numéros de maison" />
+            <name lang="it" value="Numeri civici" />
+            <name lang="nl" value="Huis nummers" />
+            <cat id="housenumber" />
+        </layer>
+        <layer enabled="true" id="nature">
+            <name lang="ar" value="الغطاء النباتي" />
+            <name lang="de" value="Vegetation" />
+            <name lang="el" value="Βλάστηση" />
+            <name lang="en" value="Vegetation" />
+            <name lang="es" value="Vegetación" />
+            <name lang="fr" value="Végétation" />
+            <name lang="it" value="Vegetazione" />
+            <name lang="nl" value="Vegetatie" />
+            <cat id="nature" />
+        </layer>
         <layer id="normal" visible="true">
             <overlay id="accommodation" />
-            <overlay id="charging_station" />
             <overlay id="food" />
-            <overlay id="fuel" />
             <overlay id="health" />
-            <overlay id="housenumber" />
-            <overlay id="motorcycle_shop" />
+            <overlay id="fuel" />
+            <overlay id="charging_station" />
+            <overlay id="parking" />
             <overlay id="mountain_pass" />
             <overlay id="mountain_peak" />
-            <overlay id="parking" />
+            <overlay id="motorcycle_shop" />
             <overlay id="attraction" />
-            <overlay id="nature" />
             <overlay id="view" />
+            <overlay id="housenumber" />
+            <overlay id="nature" />
         </layer>
     </stylemenu>
 
