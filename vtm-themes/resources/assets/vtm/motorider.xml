@@ -3,8 +3,11 @@
     version="1" xmlns="http://opensciencemap.org/rendertheme"
     xsi:schemaLocation="http://opensciencemap.org/rendertheme https://raw.githubusercontent.com/mapsforge/vtm/master/resources/rendertheme.xsd">
 
-    <!-- This is the DEFAULT-v2 theme from MotoUKRider/MotoRiderUK based on the Biker map theme -->
-    <!-- Version 1b 11th May 2023 -->
+    <!-- This is the DEFAULT theme from MotoUKRider/MotoRiderUK based on the Biker map theme -->
+    <!-- Version 1c 7th June 2023 -->
+    <!-- Tweaked "road-ref-caption" for better contrast -->
+    <!-- Added "motorway-road-ref-caption" -->
+    <!-- Tweaked Railway Tracks (dot-dash effect) -->
 
     <!-- Styles -->
     <stylemenu defaultlang="en" defaultvalue="normal" id="menu">
@@ -180,7 +183,9 @@
     <style-text style="bold" fill="#000000" id="road-ref" k="ref" priority="8" size="14"
         stroke="#ffffff" stroke-width="2.0" />
     <style-text caption="true" style="bold" fill="#ffffff" id="road-ref-caption" k="ref"
-        priority="8" size="14" bg-fill="#6c9f43" />
+        priority="8" size="14" bg-fill="#006600" />
+    <style-text caption="true" style="bold" fill="#ffffff" id="motorway-road-ref-caption" k="ref"
+        priority="8" size="14" bg-fill="#000066" />
 
     <!-- Water -->
     <style-text caption="true" fill="#2d51bc" font-family="light" id="caption-major-water-name"
@@ -782,7 +787,8 @@
         <!-- railway -->
         <m k="railway"
             v="rail|tram|light_rail|narrow_gauge|preserved|funicular|miniature|disused|abandoned">
-            <line use="de-rail" />
+            <line cap="butt" fade="12" fix="true" stipple="10" stipple-stroke="#e6e6e6"
+                stipple-width="0.8" stroke="#333333" width="1.6" />
         </m>
         <m k="railway"
             v="station|platform">
@@ -1004,7 +1010,16 @@
                 <m k="area" v="~|no|false">
                     <!-- highway tunnels -->
                     <m k="highway">
-                        <m v="motorway|trunk|primary">
+                        <m v="motorway">
+                            <text use="major-road" />
+                            <m zoom-max="12">
+                                <text use="motorway-road-ref-caption" />
+                            </m>
+                            <m zoom-min="13">
+                                <text use="road-ref" />
+                            </m>
+                        </m>
+                        <m v="trunk|primary">
                             <text use="major-road" />
                             <m zoom-max="12">
                                 <text use="road-ref-caption" />
