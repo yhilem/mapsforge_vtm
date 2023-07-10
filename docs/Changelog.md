@@ -289,7 +289,7 @@
 - vtm-jts module [#53](https://github.com/mapsforge/vtm/issues/53)
 - vtm-http module [#140](https://github.com/mapsforge/vtm/issues/140)
 - LWJGL desktop libGDX backend [#129](https://github.com/mapsforge/vtm/issues/129)
-- Available on [Maven Central](https://search.maven.org/search?q=g:org.mapsforge)
+- Available on Maven Central
 - SNAPSHOT builds publish to Sonatype OSSRH [#165](https://github.com/mapsforge/vtm/issues/165)
 - libGDX 1.9.4 [#164](https://github.com/mapsforge/vtm/issues/164)
 - Internal render themes various improvements [#41](https://github.com/mapsforge/vtm/issues/41)
