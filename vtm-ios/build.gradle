@@ -52,7 +52,7 @@ tasks.withType(JavaCompile) {
 
 task nativesJar(type: Jar) {
     dependsOn copyVtmResources, copyVtmThemesResources
-    classifier 'natives'
+    archiveClassifier = 'natives'
     from('natives')
 }
 

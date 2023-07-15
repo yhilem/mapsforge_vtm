@@ -10,6 +10,7 @@ dependencies {
 }
 
 android {
+    namespace 'org.oscim.app'
     compileSdk androidCompileSdk()
 
     compileOptions {

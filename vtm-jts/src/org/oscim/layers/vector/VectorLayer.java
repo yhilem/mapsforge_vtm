@@ -44,6 +44,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import static org.oscim.core.MercatorProjection.latitudeToY;
@@ -66,6 +68,7 @@ public class VectorLayer extends AbstractVectorLayer<Drawable> implements Gestur
     protected final SpatialIndex<Drawable> mDrawables = new QuadTree<Drawable>(1 << 30, 18);
 
     protected final List<Drawable> tmpDrawables = new ArrayList<Drawable>(128);
+    private final Comparator<Drawable> mComparator;
 
     protected final JtsConverter mConverter;
     protected double mMinX;
@@ -74,10 +77,16 @@ public class VectorLayer extends AbstractVectorLayer<Drawable> implements Gestur
     private static class GeometryWithStyle implements Drawable {
         final Geometry geometry;
         final Style style;
+        final int priority;
 
         GeometryWithStyle(Geometry g, Style s) {
+            this(g, s, 0);
+        }
+
+        GeometryWithStyle(Geometry g, Style s, int p) {
             geometry = g;
             style = s;
+            priority = p;
         }
 
         @Override
@@ -88,6 +97,11 @@ public class VectorLayer extends AbstractVectorLayer<Drawable> implements Gestur
         @Override
         public Geometry getGeometry() {
             return geometry;
+        }
+
+        @Override
+        public int getPriority() {
+            return priority;
         }
     }
 
@@ -100,6 +114,12 @@ public class VectorLayer extends AbstractVectorLayer<Drawable> implements Gestur
     public VectorLayer(Map map) {
         super(map);
         mConverter = new JtsConverter(Tile.SIZE / UNSCALE_COORD);
+        mComparator = new Comparator<Drawable>() {
+            @Override
+            public int compare(Drawable o1, Drawable o2) {
+                return Integer.compare(o1.getPriority(), o2.getPriority());
+            }
+        };
     }
 
     private static Box bbox(Geometry geometry, Style style) {
@@ -199,7 +219,8 @@ public class VectorLayer extends AbstractVectorLayer<Drawable> implements Gestur
         synchronized (this) {
             tmpDrawables.clear();
             mDrawables.search(bbox, tmpDrawables);
-            // TODO sort by some order...
+            // sort by some order...
+            Collections.sort(tmpDrawables, mComparator);
 
             for (Drawable d : tmpDrawables) {
                 Style style = d.getStyle();

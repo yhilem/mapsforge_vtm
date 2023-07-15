@@ -1,6 +1,12 @@
 # Changelog
 
-## New since 0.18.0
+## New since 0.19.0
+
+- Motorider map theme [#1045](https://github.com/mapsforge/vtm/pull/1045)
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.20.0)
+
+## Version 0.19.0 (2023-04-26)
 
 - Render themes: line texture improvements [#1008](https://github.com/mapsforge/vtm/pull/1008)
 - Biker map theme [#995](https://github.com/mapsforge/vtm/pull/995)
@@ -283,7 +289,7 @@
 - vtm-jts module [#53](https://github.com/mapsforge/vtm/issues/53)
 - vtm-http module [#140](https://github.com/mapsforge/vtm/issues/140)
 - LWJGL desktop libGDX backend [#129](https://github.com/mapsforge/vtm/issues/129)
-- Available on [Maven Central](https://search.maven.org/search?q=g:org.mapsforge)
+- Available on Maven Central
 - SNAPSHOT builds publish to Sonatype OSSRH [#165](https://github.com/mapsforge/vtm/issues/165)
 - libGDX 1.9.4 [#164](https://github.com/mapsforge/vtm/issues/164)
 - Internal render themes various improvements [#41](https://github.com/mapsforge/vtm/issues/41)

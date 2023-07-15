@@ -13,7 +13,7 @@ sourceSets {
 
 file('natives').eachDir() { dir ->
     task("nativesJar-${dir.name}", type: Jar) {
-        classifier "natives-${dir.name}"
+        archiveClassifier = "natives-${dir.name}"
         from(dir.path)
     }
 }

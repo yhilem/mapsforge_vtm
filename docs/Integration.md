@@ -2,7 +2,7 @@
 
 This article describes how to integrate the library in your project, with Gradle / Maven / Jars or SNAPSHOT builds.
 
-Current version is [![Maven Central](https://img.shields.io/maven-central/v/org.mapsforge/vtm.svg)](https://search.maven.org/search?q=g:org.mapsforge)
+Current version is [![Maven Central](https://img.shields.io/maven-central/v/org.mapsforge/vtm.svg)](https://repo1.maven.org/maven2/org/mapsforge/)
 
 ## Gradle
 
@@ -10,7 +10,6 @@ Current version is [![Maven Central](https://img.shields.io/maven-central/v/org.
 ```groovy
 implementation 'org.mapsforge:vtm:[CURRENT-VERSION]'
 implementation 'org.mapsforge:vtm-themes:[CURRENT-VERSION]'
-implementation 'net.sf.kxml:kxml2:2.3.0'
 implementation 'org.slf4j:slf4j-api:1.7.28'
 ```
 
@@ -55,7 +54,8 @@ runtimeOnly 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]:natives-osx'
 runtimeOnly 'org.mapsforge:vtm-desktop:[CURRENT-VERSION]:natives-windows'
 implementation 'com.badlogicgames.gdx:gdx:1.11.0'
 runtimeOnly 'com.badlogicgames.gdx:gdx-platform:1.11.0:natives-desktop'
-implementation 'com.formdev:svgSalamander:1.1.3'
+implementation 'guru.nidi.com.kitfox:svgSalamander:1.1.3'
+implementation 'net.sf.kxml:kxml2:2.3.0'
 ```
 
 ### Desktop (LWJGL)
@@ -176,6 +176,6 @@ The dependencies for Maven are declared in a similar way. For example:
 
 ## Jars
 
-You can find release and snapshot jars (regular and with dependencies) in [Maven Central](https://search.maven.org/search?q=g:org.mapsforge) and [Sonatype OSS Repository Hosting](https://oss.sonatype.org/content/repositories/snapshots/org/mapsforge/).
+You can find release and snapshot jars (regular and with dependencies) in [Maven Central](https://repo1.maven.org/maven2/org/mapsforge/) and [Sonatype OSS Repository Hosting](https://oss.sonatype.org/content/repositories/snapshots/org/mapsforge/).
 
 Third party jars can be found at their respective sites or in Maven Central repository.

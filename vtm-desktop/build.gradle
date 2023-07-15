@@ -3,7 +3,8 @@ apply plugin: 'maven-publish'
 
 dependencies {
     api project(':vtm-gdx')
-    api 'com.formdev:svgSalamander:1.1.3'
+    api 'guru.nidi.com.kitfox:svgSalamander:1.1.3'
+    api 'net.sf.kxml:kxml2:2.3.0'
 }
 
 sourceSets {
@@ -12,7 +13,7 @@ sourceSets {
 
 file('natives').eachDir() { dir ->
     task("nativesJar-${dir.name}", type: Jar) {
-        classifier "natives-${dir.name}"
+        archiveClassifier = "natives-${dir.name}"
         from(dir.path)
     }
 }
