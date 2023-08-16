@@ -24,7 +24,7 @@
         </layer>
         <layer id="food">
             <name lang="ar" value="طعام" />
-            <name lang="de" value="Lebensmittel" />
+            <name lang="de" value="Speisen" />
             <name lang="el" value="Φαγητό" />
             <name lang="en" value="Food" />
             <name lang="es" value="Alimentación" />
