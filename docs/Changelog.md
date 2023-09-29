@@ -1,6 +1,11 @@
 # Changelog
 
-## New since 0.19.0
+## New since 0.20.0
+
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.21.0)
+
+## Version 0.19.0 (2023-08-15)
 
 - Motorider map theme [#1045](https://github.com/mapsforge/vtm/pull/1045)
 - Minor improvements and bug fixes
