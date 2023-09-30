@@ -41,7 +41,7 @@ public class MBTilesMvtActivity extends MapActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        File file = new File(getExternalFilesDir(null), "vector.mbtiles");
+        File file = new File(getExternalMediaDirs()[0], "vector.mbtiles");
         if (!file.exists()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this)
                     .setTitle(R.string.warning)

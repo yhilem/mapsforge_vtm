@@ -180,7 +180,7 @@ public class FilePicker extends Activity implements AdapterView.OnItemClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_picker);
 
-        mDefaultDirectory = getExternalFilesDir(null) != null ? getExternalFilesDir(null).getAbsolutePath() : "/sdcard/";
+        mDefaultDirectory = getExternalMediaDirs() != null ? getExternalMediaDirs()[0].getAbsolutePath() : "/sdcard/";
         mFilePickerIconAdapter = new FilePickerIconAdapter(this);
         GridView gridView = (GridView) findViewById(R.id.filePickerView);
         gridView.setOnItemClickListener(this);

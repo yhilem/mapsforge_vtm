@@ -67,7 +67,7 @@ public class MapFragment extends android.app.Fragment {
 
         // Tile source
         MapFileTileSource tileSource = new MapFileTileSource();
-        File file = new File(getActivity().getExternalFilesDir(null), "berlin.map");
+        File file = new File(getActivity().getExternalMediaDirs()[0], "berlin.map");
         tileSource.setMapFile(file.getAbsolutePath());
 
         // Vector layer
