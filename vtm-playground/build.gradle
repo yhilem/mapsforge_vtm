@@ -22,19 +22,21 @@ sourceSets {
     main.resources.srcDirs = ['resources']
 }
 
-mainClassName = "org.oscim.test.MapsforgeTest"
-run {
-    if (project.hasProperty("args")) {
-        args project.getProperty("args").split(",")
+application {
+    mainClass = "org.oscim.test.MapsforgeTest"
+    run {
+        if (project.hasProperty("args")) {
+            args project.getProperty("args").split(",")
+        }
     }
-}
 
-task fatJar(type: Jar, dependsOn: configurations.runtimeClasspath) {
-    archiveClassifier = 'jar-with-dependencies'
-    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
-    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/services/io.jeo.data.Driver'
-    manifest {
-        attributes 'Main-Class': "${mainClassName}"
+    task fatJar(type: Jar, dependsOn: configurations.runtimeClasspath) {
+        archiveClassifier = 'jar-with-dependencies'
+        from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+        exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/services/io.jeo.data.Driver'
+        manifest {
+            attributes 'Main-Class': "${mainClass}"
+        }
+        with jar
     }
-    with jar
 }

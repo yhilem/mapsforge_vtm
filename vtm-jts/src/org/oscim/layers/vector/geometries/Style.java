@@ -19,6 +19,7 @@ package org.oscim.layers.vector.geometries;
 
 import org.oscim.backend.canvas.Color;
 import org.oscim.backend.canvas.Paint;
+import org.oscim.renderer.bucket.LineBucket;
 import org.oscim.renderer.bucket.TextureItem;
 
 import static org.oscim.backend.canvas.Color.parseColor;
@@ -52,7 +53,7 @@ public class Style {
     public final int stippleColor;
     public final float stippleWidth;
     public final TextureItem texture;
-    public final boolean pointReduction;
+    public final float dropDistance;
     public final boolean textureRepeat;
 
     public final float heightOffset;
@@ -78,7 +79,7 @@ public class Style {
         stippleColor = builder.stippleColor;
         stippleWidth = builder.stippleWidth;
         texture = builder.texture;
-        pointReduction = builder.pointReduction;
+        dropDistance = builder.dropDistance;
         textureRepeat = builder.textureRepeat;
 
         heightOffset = builder.heightOffset;
@@ -115,7 +116,7 @@ public class Style {
         public int stippleColor = Color.GRAY;
         public float stippleWidth = 1;
         public TextureItem texture = null;
-        public boolean pointReduction = true;
+        public float dropDistance = LineBucket.MIN_DIST;
         public boolean textureRepeat = true;
 
         public float heightOffset = 0;
@@ -254,8 +255,8 @@ public class Style {
             return this;
         }
 
-        public Builder pointReduction(boolean pointReduction) {
-            this.pointReduction = pointReduction;
+        public Builder dropDistance(float dropDistance) {
+            this.dropDistance = dropDistance;
             return this;
         }
 

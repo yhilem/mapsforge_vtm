@@ -18,12 +18,17 @@
 package org.oscim.android.test;
 
 import android.os.Bundle;
-
 import org.oscim.backend.canvas.Color;
+import org.oscim.backend.canvas.Paint;
+import org.oscim.core.GeoPoint;
 import org.oscim.layers.vector.VectorLayer;
+import org.oscim.layers.vector.geometries.LineDrawable;
 import org.oscim.layers.vector.geometries.PointDrawable;
 import org.oscim.layers.vector.geometries.Style;
 import org.oscim.utils.ColorUtil;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class VectorLayerActivity extends BitmapTileActivity {
 
@@ -67,6 +72,15 @@ public class VectorLayerActivity extends BitmapTileActivity {
         //        }
         //    }
 
+        addRandomCircles(vectorLayer);
+        addThickSemitransparentPolyline(vectorLayer);
+
+        vectorLayer.update();
+
+        mMap.layers().add(vectorLayer);
+    }
+
+    private void addRandomCircles(VectorLayer vectorLayer) {
         Style.Builder sb = Style.builder()
                 .buffer(0.5)
                 .fillColor(Color.RED)
@@ -84,9 +98,26 @@ public class VectorLayerActivity extends BitmapTileActivity {
                     style));
 
         }
-        vectorLayer.update();
+    }
 
-        mMap.layers().add(vectorLayer);
+    private void addThickSemitransparentPolyline(VectorLayer vectorLayer) {
+        final Style style = Style.builder()
+                .strokeWidth(20f)
+                .strokeColor(Color.setA(Color.BLUE, 127))
+                .cap(Paint.Cap.BUTT)
+                .dropDistance(10f)
+                .fixed(true)
+                .build();
+
+        //create a polyline in Hamburg, Germany
+        final List<GeoPoint> points = Arrays.asList(
+                new GeoPoint(53.5334, 10.069833), new GeoPoint(53.5419, 10.09075), new GeoPoint(53.53745, 10.091017), new GeoPoint(53.54105, 10.0928), new GeoPoint(53.536721, 10.09416),
+                new GeoPoint(53.5406, 10.08365), new GeoPoint(53.5406, 11.0)
+        );
+
+        final LineDrawable line = new LineDrawable(points, style);
+
+        vectorLayer.add(line);
     }
 
     @Override

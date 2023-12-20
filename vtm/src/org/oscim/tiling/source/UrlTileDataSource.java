@@ -54,27 +54,27 @@ public class UrlTileDataSource implements ITileDataSource {
     public void query(MapTile tile, ITileDataSink sink) {
         ITileCache cache = mTileSource.tileCache;
 
+        if (mUseCache) {
+            TileReader c = cache.getTile(tile);
+            if (c != null) {
+                InputStream is = c.getInputStream();
+                try {
+                    if (mTileDecoder.decode(tile, sink, is)) {
+                        sink.completed(QueryResult.SUCCESS);
+                        return;
+                    }
+                } catch (IOException e) {
+                    log.debug("{} Cache read: {}", tile, e);
+                } finally {
+                    IOUtils.closeQuietly(is);
+                }
+            }
+        }
+
         QueryResult res = QueryResult.FAILED;
 
         TileWriter cacheWriter = null;
         try {
-            if (mUseCache) {
-                TileReader c = cache.getTile(tile);
-                if (c != null) {
-                    InputStream is = c.getInputStream();
-                    try {
-                        if (mTileDecoder.decode(tile, sink, is)) {
-                            sink.completed(QueryResult.SUCCESS);
-                            return;
-                        }
-                    } catch (IOException e) {
-                        log.debug("{} Cache read: {}", tile, e);
-                    } finally {
-                        IOUtils.closeQuietly(is);
-                    }
-                }
-            }
-
             mConn.sendRequest(tile);
             InputStream is = mConn.read();
             if (mUseCache) {

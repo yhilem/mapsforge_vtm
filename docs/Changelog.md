@@ -2,6 +2,9 @@
 
 ## New since 0.20.0
 
+- Drawable style `dropDistance` option [#1085](https://github.com/mapsforge/vtm/pull/1085)
+  - Removed `pointReduction` option
+- Canvas adapter: line scale option [#1075](https://github.com/mapsforge/vtm/pull/1075)
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.21.0)
 
