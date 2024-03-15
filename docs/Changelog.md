@@ -1,6 +1,11 @@
 # Changelog
 
-## New since 0.20.0
+## New since 0.21.0
+
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.22.0)
+
+## Version 0.21.0 (2024-03-15)
 
 - Drawable style `dropDistance` option [#1085](https://github.com/mapsforge/vtm/pull/1085)
   - Removed `pointReduction` option
