@@ -10,7 +10,6 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url 'https://jitpack.io' }
     }
 }
@@ -30,14 +29,14 @@ include ':vtm-gdx-poi3d'
 include ':vtm-http'
 include ':vtm-ios'
 include ':vtm-ios-example'
-//include ':vtm-jeo'
+include ':vtm-jeo'
 include ':vtm-json'
 include ':vtm-jts'
 include ':vtm-models'
 include ':vtm-mvt'
 include ':vtm-playground'
 //include ':vtm-tests'
-include ':vtm-theme-comparator'
+//include ':vtm-theme-comparator'
 include ':vtm-themes'
 //include ':vtm-web'
 //include ':vtm-web-app'

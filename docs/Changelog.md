@@ -3,6 +3,8 @@
 ## New since 0.21.0
 
 - `vtm-themes` change package [#1130](https://github.com/mapsforge/vtm/issues/1130)
+- Enable `vtm-jeo`
+- Disable `vtm-theme-comparator`
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.22.0)
 
@@ -13,7 +15,7 @@
 - Line style `transparent` option [#1100](https://github.com/mapsforge/vtm/pull/1100)
 - Canvas adapter: line scale option [#1075](https://github.com/mapsforge/vtm/pull/1075)
 - Disable `vtm-app`
-- Disable `vtm-web` [#1110](https://github.com/mapsforge/vtm/issues/1110)
+- Disable `vtm-web`, `vtm-web-app` [#1110](https://github.com/mapsforge/vtm/issues/1110)
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.21.0)
 
