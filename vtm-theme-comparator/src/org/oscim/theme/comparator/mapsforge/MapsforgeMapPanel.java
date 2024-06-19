@@ -34,22 +34,20 @@ import org.mapsforge.map.model.Model;
 import org.mapsforge.map.model.common.PreferencesFacade;
 import org.mapsforge.map.reader.MapFile;
 import org.mapsforge.map.rendertheme.ExternalRenderTheme;
-import org.mapsforge.map.rendertheme.InternalRenderTheme;
 import org.mapsforge.map.rendertheme.XmlRenderTheme;
+import org.mapsforge.map.rendertheme.internal.MapsforgeThemes;
 import org.oscim.core.Tile;
 import org.oscim.theme.comparator.BothMapPositionHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.swing.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.UUID;
 import java.util.prefs.Preferences;
-
-import javax.swing.BorderFactory;
-import javax.swing.JPanel;
 
 public class MapsforgeMapPanel extends JPanel {
     private static final Logger log = LoggerFactory.getLogger(MapsforgeMapPanel.class);
@@ -107,12 +105,12 @@ public class MapsforgeMapPanel extends JPanel {
             try {
                 renderTheme = new ExternalRenderTheme(themeFile);
             } catch (FileNotFoundException e) {
-                renderTheme = InternalRenderTheme.OSMARENDER;
+                renderTheme = MapsforgeThemes.OSMARENDER;
             }
             tileRendererLayer.setXmlRenderTheme(renderTheme);
 
         } else {
-            tileRendererLayer.setXmlRenderTheme(InternalRenderTheme.OSMARENDER);
+            tileRendererLayer.setXmlRenderTheme(MapsforgeThemes.OSMARENDER);
         }
 
         return tileRendererLayer;
