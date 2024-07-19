@@ -3,8 +3,6 @@
 ## New since 0.21.0
 
 - `vtm-themes` change package [#1130](https://github.com/mapsforge/vtm/issues/1130)
-- Enable `vtm-jeo`
-- Disable `vtm-theme-comparator`
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.22.0)
 
