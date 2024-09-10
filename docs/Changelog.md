@@ -1,6 +1,6 @@
 # Changelog
 
-## New since 0.21.0
+## Next version
 
 - `vtm-themes` change package [#1130](https://github.com/mapsforge/vtm/issues/1130)
 - Minor improvements and bug fixes
