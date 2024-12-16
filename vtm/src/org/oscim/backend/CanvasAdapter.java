@@ -207,8 +207,8 @@ public abstract class CanvasAdapter {
         // Fallback to internal resources
         if (inputStream == null) {
             inputStream = inputStreamFromAssets("", src);
-            if (inputStream != null)
-                log.info("internal resource: " + src);
+            /*if (inputStream != null)
+                log.info("internal resource: " + src);*/
         }
 
         if (inputStream == null) {

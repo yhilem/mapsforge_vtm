@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.mapsforge/vtm.svg)](https://repo1.maven.org/maven2/org/mapsforge/)
+[![](https://jitpack.io/v/mapsforge/vtm.svg)](https://jitpack.io/#mapsforge/vtm)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](http://www.gnu.org/licenses/lgpl-3.0)
 
 # V™
@@ -11,7 +11,7 @@ VTM (Vector Tile Map) was developed within the [OpenScienceMap](https://github.c
 
 See the **[integration guide](docs/Integration.md)** and [changelog](docs/Changelog.md). And read through [how to contribute](docs/CONTRIBUTING.md) guidelines.
 
-If you have any questions or problems, don't hesitate to ask the Discussions for help.
+If you have any questions or problems, don't hesitate to ask the [Discussions](https://github.com/mapsforge/vtm/discussions) for help.
 
 ## Features
 - Java map library

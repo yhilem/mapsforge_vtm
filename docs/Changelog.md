@@ -1,15 +1,29 @@
 # Changelog
 
-## New since 0.20.0
+## Next version
+
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.23.0)
+
+## Version 0.22.0 (2024-10-10)
+
+- `vtm-themes` change package [#1130](https://github.com/mapsforge/vtm/issues/1130)
+- Add native libraries module [#1126](https://github.com/mapsforge/vtm/pull/1126)
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.22.0)
+
+## Version 0.21.0 (2024-03-15)
 
 - Drawable style `dropDistance` option [#1085](https://github.com/mapsforge/vtm/pull/1085)
   - Removed `pointReduction` option
 - Line style `transparent` option [#1100](https://github.com/mapsforge/vtm/pull/1100)
 - Canvas adapter: line scale option [#1075](https://github.com/mapsforge/vtm/pull/1075)
+- Disable `vtm-app`
+- Disable `vtm-web`, `vtm-web-app` [#1110](https://github.com/mapsforge/vtm/issues/1110)
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.21.0)
 
-## Version 0.19.0 (2023-08-15)
+## Version 0.20.0 (2023-08-15)
 
 - Motorider map theme [#1045](https://github.com/mapsforge/vtm/pull/1045)
 - Minor improvements and bug fixes

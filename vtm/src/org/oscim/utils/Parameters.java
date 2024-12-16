@@ -61,6 +61,14 @@ public final class Parameters {
     /**
      * Calculation of centroids for all polygons.
      * (may affect performance)
+     * <p>
+     * When a way will be rendered then typically a label / symbol will be applied
+     * by the render theme. If the way does not come with a defined labelPosition
+     * we should calculate a position, that is based on all points of the given way.
+     * This "auto" position calculation is also done in the LabelTileLoaderHook class
+     * but then the points of the way have been already reduced cause of the clipping
+     * that is happening. So the suggestion here is to calculate the centroid of the way
+     * and use that as centroidPosition of the element.
      */
     public static boolean POLY_CENTROID = false;
 

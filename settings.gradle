@@ -10,16 +10,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url 'https://jitpack.io' }
     }
 }
+include ':jni'
 include ':vtm'
 include ':vtm-android'
 include ':vtm-android-example'
 include ':vtm-android-gdx'
 include ':vtm-android-mvt'
-include ':vtm-app'
+//include ':vtm-app'
 include ':vtm-desktop'
 include ':vtm-desktop-lwjgl'
 include ':vtm-desktop-lwjgl3'
@@ -36,8 +36,8 @@ include ':vtm-models'
 include ':vtm-mvt'
 include ':vtm-playground'
 //include ':vtm-tests'
-include ':vtm-theme-comparator'
+//include ':vtm-theme-comparator'
 include ':vtm-themes'
-include ':vtm-web'
-include ':vtm-web-app'
+//include ':vtm-web'
+//include ':vtm-web-app'
 //include ':vtm-web-js'
