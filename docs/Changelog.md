@@ -2,6 +2,7 @@
 
 ## Next version
 
+- Android native libs for 16 KB page size [#1162](https://github.com/mapsforge/vtm/pull/1162)
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.23.0)
 
