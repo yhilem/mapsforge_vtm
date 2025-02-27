@@ -24,7 +24,6 @@ repositories {
 ```groovy
 implementation '[PACKAGE]:vtm:[CURRENT-VERSION]'
 implementation '[PACKAGE]:vtm-themes:[CURRENT-VERSION]'
-implementation 'org.slf4j:slf4j-api:1.7.28'
 ```
 
 ### Android
@@ -101,17 +100,16 @@ runtimeOnly 'org.lwjgl:lwjgl:3.3.1:natives-windows'
 
 ```groovy
 implementation '[PACKAGE]:vtm-jts:[CURRENT-VERSION]'
-// https://github.com/locationtech/jts/issues/145
-implementation 'org.locationtech.jts:jts-core:1.15.1'
+implementation 'org.locationtech.jts:jts-core:1.20.0'
 ```
 
 ### Online tiles
 
 ```groovy
 implementation '[PACKAGE]:vtm-http:[CURRENT-VERSION]'
-// https://github.com/square/okhttp/issues/4481
-implementation 'com.squareup.okhttp3:okhttp:3.12.13'
-implementation 'com.squareup.okio:okio:1.15.0'
+implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+implementation 'com.squareup.okio:okio:3.6.0'
+implementation 'com.squareup.okio:okio-jvm:3.6.0'
 ```
 
 ### MBTiles
@@ -121,8 +119,7 @@ implementation '[PACKAGE]:vtm-android-mvt:[CURRENT-VERSION]'
 implementation '[PACKAGE]:vtm-mvt:[CURRENT-VERSION]'
 implementation 'com.google.protobuf:protobuf-java:3.6.1'
 implementation 'com.wdtinc:mapbox-vector-tile:3.1.0'
-// https://github.com/locationtech/jts/issues/145
-implementation 'org.locationtech.jts:jts-core:1.15.1'
+implementation 'org.locationtech.jts:jts-core:1.20.0'
 ```
 
 ### Mapbox vector tiles
@@ -131,8 +128,7 @@ implementation 'org.locationtech.jts:jts-core:1.15.1'
 implementation '[PACKAGE]:vtm-mvt:[CURRENT-VERSION]'
 implementation 'com.google.protobuf:protobuf-java:3.6.1'
 implementation 'com.wdtinc:mapbox-vector-tile:3.1.0'
-// https://github.com/locationtech/jts/issues/145
-implementation 'org.locationtech.jts:jts-core:1.15.1'
+implementation 'org.locationtech.jts:jts-core:1.20.0'
 ```
 
 ### GeoJSON vector tiles
@@ -148,9 +144,7 @@ implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
 
 ```groovy
 implementation '[PACKAGE]:vtm-jeo:[CURRENT-VERSION]'
-implementation('com.github.jeo.jeo:jeo-carto:master-SNAPSHOT') {
-    exclude group: 'org.slf4j', module: 'slf4j-jdk14'
-}
+implementation 'com.github.jeo.jeo:jeo-carto:master-SNAPSHOT'
 ```
 
 ## Snapshots

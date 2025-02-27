@@ -22,21 +22,21 @@ package org.oscim.backend;
 import org.oscim.backend.canvas.Bitmap;
 import org.oscim.backend.canvas.Canvas;
 import org.oscim.backend.canvas.Paint;
+import org.oscim.theme.ThemeCallback;
 import org.oscim.theme.XmlThemeResourceProvider;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
+import java.util.logging.Logger;
 
 /**
  * The Class CanvasAdapter.
  */
 public abstract class CanvasAdapter {
-    private static final Logger log = LoggerFactory.getLogger(CanvasAdapter.class);
+    private static final Logger log = Logger.getLogger(CanvasAdapter.class.getName());
 
     private static final String PREFIX_ASSETS = "assets:";
     public static final String PREFIX_FILE = "file:";
@@ -163,17 +163,17 @@ public abstract class CanvasAdapter {
      * @param src                the resource
      * @return the bitmap
      */
-    protected abstract Bitmap loadBitmapAssetImpl(String relativePathPrefix, String src, XmlThemeResourceProvider resourceProvider, int width, int height, int percent) throws IOException;
+    protected abstract Bitmap loadBitmapAssetImpl(String relativePathPrefix, String src, XmlThemeResourceProvider resourceProvider, int width, int height, int percent, ThemeCallback themeCallback) throws IOException;
 
-    public static Bitmap getBitmapAsset(String relativePathPrefix, String src) throws IOException {
-        return getBitmapAsset(relativePathPrefix, src, null, 0, 0, 100);
+    public static Bitmap getBitmapAsset(String relativePathPrefix, String src, ThemeCallback themeCallback) throws IOException {
+        return getBitmapAsset(relativePathPrefix, src, null, 0, 0, 100, themeCallback);
     }
 
-    public static Bitmap getBitmapAsset(String relativePathPrefix, String src, XmlThemeResourceProvider resourceProvider, int width, int height, int percent) throws IOException {
-        return g.loadBitmapAssetImpl(relativePathPrefix, src, resourceProvider, width, height, percent);
+    public static Bitmap getBitmapAsset(String relativePathPrefix, String src, XmlThemeResourceProvider resourceProvider, int width, int height, int percent, ThemeCallback themeCallback) throws IOException {
+        return g.loadBitmapAssetImpl(relativePathPrefix, src, resourceProvider, width, height, percent, themeCallback);
     }
 
-    protected static Bitmap createBitmap(String relativePathPrefix, String src, XmlThemeResourceProvider resourceProvider, int width, int height, int percent) throws IOException {
+    protected static Bitmap createBitmap(String relativePathPrefix, String src, XmlThemeResourceProvider resourceProvider, int width, int height, int percent, ThemeCallback themeCallback) throws IOException {
         if (src == null || src.length() == 0) {
             // no image source defined
             return null;
@@ -184,7 +184,7 @@ public abstract class CanvasAdapter {
             try {
                 inputStream = resourceProvider.createInputStream(relativePathPrefix, src);
             } catch (IOException ioe) {
-                log.debug("Exception trying to access resource: " + src + " using custom provider: " + ioe);
+                log.fine("Exception trying to access resource: " + src + " using custom provider: " + ioe);
                 // Ignore and try to resolve input stream using the standard process
             }
         }
@@ -212,7 +212,7 @@ public abstract class CanvasAdapter {
         }
 
         if (inputStream == null) {
-            log.error("invalid resource: " + src);
+            log.severe("invalid resource: " + src);
             return null;
         }
 
@@ -222,6 +222,8 @@ public abstract class CanvasAdapter {
         else
             bitmap = decodeBitmap(inputStream, width, height, percent);
         inputStream.close();
+        if (themeCallback != null)
+            bitmap = themeCallback.getBitmap(bitmap);
         return bitmap;
     }
 

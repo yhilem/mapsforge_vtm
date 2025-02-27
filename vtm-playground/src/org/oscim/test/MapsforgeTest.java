@@ -65,6 +65,8 @@ public class MapsforgeTest extends GdxMapApp {
         for (File mapFile : mapFiles) {
             MapFileTileSource mapFileTileSource = new MapFileTileSource();
             mapFileTileSource.setMapFile(mapFile.getAbsolutePath());
+            if ("world.map".equalsIgnoreCase(mapFile.getName()))
+                mapFileTileSource.setPriority(-1);
             tileSource.add(mapFileTileSource);
         }
         //tileSource.setDeduplicate(true);
@@ -152,7 +154,7 @@ public class MapsforgeTest extends GdxMapApp {
     }
 
     void loadTheme(final String styleId) {
-        mMap.setTheme(VtmThemes.DEFAULT);
+        mMap.setTheme(VtmThemes.MOTORIDER);
     }
 
     public static void main(String[] args) {

@@ -56,18 +56,17 @@ import org.oscim.theme.styles.AreaStyle;
 import org.oscim.theme.styles.RenderStyle;
 import org.oscim.tiling.source.mapfile.MapFileTileSource;
 import org.oscim.tiling.source.mapfile.MapInfo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.zip.ZipInputStream;
 
 public class MapsforgeActivity extends MapActivity {
 
-    private static final Logger log = LoggerFactory.getLogger(MapsforgeActivity.class);
+    private static final Logger log = Logger.getLogger(MapsforgeActivity.class.getName());
 
     static final int SELECT_MAP_FILE = 0;
     private static final int SELECT_THEME_ARCHIVE = 1;
@@ -119,7 +118,25 @@ public class MapsforgeActivity extends MapActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        if (itemId == R.id.theme_default) {
+        if (itemId == R.id.theme_motorider) {
+            if (mTheme != null)
+                mTheme.dispose();
+            mTheme = mMap.setTheme(VtmThemes.MOTORIDER);
+            item.setChecked(true);
+            return true;
+        } else if (itemId == R.id.theme_motorider_dark) {
+            if (mTheme != null)
+                mTheme.dispose();
+            mTheme = mMap.setTheme(VtmThemes.MOTORIDER_DARK);
+            item.setChecked(true);
+            return true;
+        } else if (itemId == R.id.theme_biker) {
+            if (mTheme != null)
+                mTheme.dispose();
+            mTheme = mMap.setTheme(VtmThemes.BIKER);
+            item.setChecked(true);
+            return true;
+        } else if (itemId == R.id.theme_default) {
             if (mTheme != null)
                 mTheme.dispose();
             mTheme = mMap.setTheme(VtmThemes.DEFAULT);
@@ -129,24 +146,6 @@ public class MapsforgeActivity extends MapActivity {
             if (mTheme != null)
                 mTheme.dispose();
             mTheme = mMap.setTheme(VtmThemes.OSMARENDER);
-            item.setChecked(true);
-            return true;
-        } else if (itemId == R.id.theme_osmagray) {
-            if (mTheme != null)
-                mTheme.dispose();
-            mTheme = mMap.setTheme(VtmThemes.OSMAGRAY);
-            item.setChecked(true);
-            return true;
-        } else if (itemId == R.id.theme_tubes) {
-            if (mTheme != null)
-                mTheme.dispose();
-            mTheme = mMap.setTheme(VtmThemes.TRONRENDER);
-            item.setChecked(true);
-            return true;
-        } else if (itemId == R.id.theme_newtron) {
-            if (mTheme != null)
-                mTheme.dispose();
-            mTheme = mMap.setTheme(VtmThemes.NEWTRON);
             item.setChecked(true);
             return true;
         } else if (itemId == R.id.theme_external_archive) {
@@ -227,7 +226,7 @@ public class MapsforgeActivity extends MapActivity {
                     mPrefs.clear();
                 }
             } catch (Exception e) {
-                log.error(e.toString());
+                log.severe(e.toString());
                 finish();
             }
         } else if (requestCode == SELECT_THEME_ARCHIVE) {
@@ -294,7 +293,7 @@ public class MapsforgeActivity extends MapActivity {
     protected void loadTheme(final String styleId) {
         if (mTheme != null)
             mTheme.dispose();
-        mTheme = mMap.setTheme(VtmThemes.DEFAULT);
+        mTheme = mMap.setTheme(VtmThemes.MOTORIDER);
     }
 
     private void mapsforgeTheme(IRenderTheme theme) {

@@ -20,18 +20,17 @@ import org.oscim.map.Viewport;
 import org.oscim.tiling.ITileDataSource;
 import org.oscim.tiling.OverzoomTileDataSource;
 import org.oscim.tiling.TileSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class MultiMapFileTileSource extends TileSource implements IMapFileTileSource {
 
-    private static final Logger log = LoggerFactory.getLogger(MultiMapFileTileSource.class);
+    private static final Logger log = Logger.getLogger(MultiMapFileTileSource.class.getName());
 
     private boolean deduplicate;
     private final List<MapFileTileSource> mapFileTileSources = new ArrayList<>();
@@ -80,9 +79,10 @@ public class MultiMapFileTileSource extends TileSource implements IMapFileTileSo
                 int[] zoomLevels = zoomsByTileSource.get(mapFileTileSource);
                 if (zoomLevels != null)
                     mapDatabase.restrictToZoomRange(zoomLevels[0], zoomLevels[1]);
+                mapDatabase.setPriority(mapFileTileSource.getPriority());
                 multiMapDatabase.add(mapDatabase);
             } catch (IOException e) {
-                log.debug(e.toString());
+                log.fine(e.toString());
             }
         }
         return new OverzoomTileDataSource(multiMapDatabase, mOverZoom);

@@ -25,16 +25,15 @@ import org.oscim.tiling.OverzoomTileDataSource;
 import org.oscim.tiling.TileSource;
 import org.oscim.tiling.source.mapfile.header.MapFileHeader;
 import org.oscim.tiling.source.mapfile.header.MapFileInfo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import java.util.logging.Logger;
 
 public class MapFileTileSource extends TileSource implements IMapFileTileSource {
-    private static final Logger log = LoggerFactory.getLogger(MapFileTileSource.class);
+    private static final Logger log = Logger.getLogger(MapFileTileSource.class.getName());
 
     /**
      * Amount of cache blocks that the index cache should store.
@@ -54,6 +53,14 @@ public class MapFileTileSource extends TileSource implements IMapFileTileSource 
      */
     private String preferredLanguage;
     private Callback callback;
+
+    /**
+     * Priority of this MapFileTileSource. A higher number means a higher priority. Negative numbers have a special
+     * meaning, they should only be used for so-called background maps. Data from background maps is only read
+     * if no other map has provided a (complete) map tile. The most famous example of a background map is a
+     * low-resolution world map. The default priority is 0.
+     */
+    private int priority = 0;
 
     public MapFileTileSource() {
         this(Viewport.MIN_ZOOM_LEVEL, Viewport.MAX_ZOOM_LEVEL);
@@ -107,6 +114,31 @@ public class MapFileTileSource extends TileSource implements IMapFileTileSource 
         this.preferredLanguage = preferredLanguage;
     }
 
+    /**
+     * Returns the priority of this MapFileTileSource. A higher number means a higher priority. Negative numbers
+     * have a special meaning, they should only be used for so-called background maps. Data from background
+     * maps is only read if no other map has provided a (complete) map tile. The most famous example of a
+     * background map is a low-resolution world map.
+     *
+     * @return The priority of this MapFileTileSource. Default is 0.
+     */
+    public int getPriority() {
+        return priority;
+    }
+
+    /**
+     * Sets the priority of this MapFileTileSource. A higher number means a higher priority. Negative numbers have
+     * a special meaning, they should only be used for so-called background maps. Data from background maps is
+     * only read if no other map has provided a (complete) map tile. The most famous example of a background
+     * map is a low-resolution world map. The default priority is 0.
+     *
+     * @param priority Priority of this MapFileTileSource. Negative number means background map priority (see above
+     *                 for the description).
+     */
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
     @Override
     public OpenResult open() {
         if (mapFileInputStream == null && !options.containsKey("file"))
@@ -150,10 +182,10 @@ public class MapFileTileSource extends TileSource implements IMapFileTileSource 
             mapFile = file;
             databaseIndexCache = new IndexCache(inputChannel, INDEX_CACHE_SIZE);
 
-            log.debug("File version: " + fileInfo.fileVersion);
+            log.fine("File version: " + fileInfo.fileVersion);
             return OpenResult.SUCCESS;
         } catch (IOException e) {
-            log.error(e.toString());
+            log.severe(e.toString());
             // make sure that the file is closed
             close();
             return new OpenResult(e.toString());
@@ -165,7 +197,7 @@ public class MapFileTileSource extends TileSource implements IMapFileTileSource 
         try {
             return new OverzoomTileDataSource(new MapDatabase(this), mOverZoom);
         } catch (IOException e) {
-            log.debug(e.toString());
+            log.fine(e.toString());
         }
         return null;
     }
@@ -177,7 +209,7 @@ public class MapFileTileSource extends TileSource implements IMapFileTileSource 
                 inputChannel.close();
                 inputChannel = null;
             } catch (IOException e) {
-                log.error(e.toString());
+                log.severe(e.toString());
             }
         }
         fileHeader = null;
