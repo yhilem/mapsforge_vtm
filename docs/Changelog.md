@@ -2,7 +2,7 @@
 
 ## Next version
 
-- Motorider map theme improvements
+- Motorider map theme improvements [#1185](https://github.com/mapsforge/vtm/pull/1185)
 - Rename `MapDatabase` to `MapFile` [#1184](https://github.com/mapsforge/vtm/pull/1184)
   - Rename `MultiMapDatabase` to `MultiMapFile`
 - Minor improvements and bug fixes
