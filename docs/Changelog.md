@@ -2,6 +2,11 @@
 
 ## Next version
 
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.25.0)
+
+## Version 0.24.0 (2025-03-03)
+
 - Android native libs for 16 KB page size [#1179](https://github.com/mapsforge/vtm/pull/1179)
 - Multi-map `MapFileTileSource.setPriority` [#1176](https://github.com/mapsforge/vtm/pull/1176)
 - Color filter theme resources [#1175](https://github.com/mapsforge/vtm/pull/1175)
@@ -13,6 +18,7 @@
 - Libtess2 v1.0.1 [#1178](https://github.com/mapsforge/vtm/pull/1178)
 - Disable `vtm-ios` [#1166](https://github.com/mapsforge/vtm/pull/1166)
 - Remove `vtm-theme-comparator` [#1169](https://github.com/mapsforge/vtm/pull/1169)
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.24.0)
 
 ## Version 0.23.0 (2025-02-22)
