@@ -21,7 +21,7 @@ If you have any questions or problems, don't hesitate to ask the [forum](https:/
 - Hillshading from HGT digital elevation model data
 - Support for multiple tile sources:
   - Mapsforge vector maps
-    - MBTiles vector & raster
+  - MBTiles vector & raster
   - Mapbox vector tiles
   - GeoJSON vector tiles
   - OpenScienceMap vector tiles
