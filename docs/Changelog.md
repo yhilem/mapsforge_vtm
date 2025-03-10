@@ -52,14 +52,14 @@
 
 ## Version 0.20.0 (2023-08-15)
 
-- Motorider map theme [#1045](https://github.com/mapsforge/vtm/pull/1045)
+- Motorider map theme [#1183](https://github.com/mapsforge/vtm/issues/1183)
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.20.0)
 
 ## Version 0.19.0 (2023-04-26)
 
 - Render themes: line texture improvements [#1008](https://github.com/mapsforge/vtm/pull/1008)
-- Biker map theme [#995](https://github.com/mapsforge/vtm/pull/995)
+- Biker map theme [#1192](https://github.com/mapsforge/vtm/issues/1192)
 - MVT simplification [#956](https://github.com/mapsforge/vtm/pull/956)
   - `Parameters.SIMPLIFICATION_TOLERANCE`, `Parameters.SIMPLIFICATION_EXCEPTIONS`
 - libGDX 1.11.0 [#972](https://github.com/mapsforge/vtm/pull/972) [#977](https://github.com/mapsforge/vtm/pull/977)
