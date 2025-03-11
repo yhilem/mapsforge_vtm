@@ -37,7 +37,7 @@ public class DefaultSources {
     // Requires a valid HTTP User-Agent identifying application
     // https://operations.osmfoundation.org/policies/tiles/
     public static Builder<?> OPENSTREETMAP = BitmapTileSource.builder()
-            .url("https://tile.openstreetmap.org")
+            .url("https://a.tile.openstreetmap.org", "https://b.tile.openstreetmap.org", "https://c.tile.openstreetmap.org")
             .zoomMax(18);
 
     public static Builder<?> STAMEN_TONER = BitmapTileSource.builder()
