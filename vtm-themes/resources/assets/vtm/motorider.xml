@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://opensciencemap.org/rendertheme https://raw.githubusercontent.com/mapsforge/vtm/master/resources/rendertheme.xsd">
 	
     <!-- This is the 2nd generation OpenGL/VTM "light" theme based on the Biker map theme-->
-    <!-- Version 2.0 9th March 2025-->
+    <!-- Version 2.0 10th March 2025-->
 
     <!-- Defines LAYERS Menu -->
     <stylemenu defaultlang="en" defaultvalue="normal" id="menu">
@@ -404,9 +404,9 @@
     <style-area fade="10" fill="#f8e7d3" id="de-retail" />
     <style-area fade="13" fill="#b8b8c1" id="de-pedestrian" />
     <style-area fade="13" fill="#b8b8c1" id="de-offroad" />
-    <style-area fade="10" fill="#ebdbe8" id="de-industrial" />
+    <style-area fade="10" fill="#eddeea" id="de-industrial" />
     <style-area fade="6" fill="#e0e0b8" id="de-school" />
-    <style-area fade="6" fill="#ebdbe8" id="de-hospital" />
+    <style-area fade="6" fill="#ffcccc" id="de-hospital" />
     <style-area fade="6" fill="#ace0b0" id="de-park" />
     <style-area fade="6" fill="#BBE9FCE6" id="de-fell" />
     <style-area fade="6" fill="#a6cd98" id="de-forest" />
@@ -556,7 +556,7 @@
             <m v="retail" zoom-min="12">
                 <area use="de-retail" />
             </m>
-            <m v="commercial|industrial|brownfield|railway|garages|construction" zoom-min="12">
+            <m v="industrial|brownfield|railway|garages|construction" zoom-min="12">
                 <area use="de-industrial" />
             </m>
         </m>
