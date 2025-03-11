@@ -76,6 +76,11 @@ In other words, you are allowed to include VTM library in your Android applicati
 
 ## Screenshots
 
+| Android       |
+| ------------- |
+|![VTM](https://github.com/user-attachments/assets/16bfc9d8-48d1-4aec-95df-330b54da819c)|
+|![VTM2](https://github.com/user-attachments/assets/e4a69ccf-277b-470a-b238-16b5d25451f8)|
+
 | Android       | iOS           |
 | ------------- | ------------- |
 |<img src="docs/images/android.png" width="1000">|<img src="docs/images/ios.png" width="1000">|
