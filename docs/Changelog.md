@@ -2,6 +2,11 @@
 
 ## Next version
 
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.26.0)
+
+## Version 0.25.0 (2025-04-04)
+
 - Hillshading from HGT digital elevation model data [#1189](https://github.com/mapsforge/vtm/pull/1189)
   - `vtm-hillshading` module
 - Online tiles support multiple servers [#1196](https://github.com/mapsforge/vtm/pull/1196)
