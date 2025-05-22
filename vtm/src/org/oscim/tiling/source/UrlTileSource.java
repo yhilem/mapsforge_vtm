@@ -27,12 +27,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.Map;
+import java.util.Random;
 
 public abstract class UrlTileSource extends TileSource {
 
     public abstract static class Builder<T extends Builder<T>> extends TileSource.Builder<T> {
         protected String tilePath;
-        protected String url;
+        protected String[] urls;
         private HttpEngine.Factory engineFactory;
         private String keyName = "key";
         private String apiKey;
@@ -41,7 +42,7 @@ public abstract class UrlTileSource extends TileSource {
         }
 
         protected Builder(String url, String tilePath) {
-            this.url = url;
+            this.urls = new String[]{url};
             this.tilePath = tilePath;
         }
 
@@ -66,8 +67,8 @@ public abstract class UrlTileSource extends TileSource {
             return self();
         }
 
-        public T url(String url) {
-            this.url = url;
+        public T url(String... urls) {
+            this.urls = urls;
             return self();
         }
 
@@ -79,7 +80,8 @@ public abstract class UrlTileSource extends TileSource {
     }
 
     public static final TileUrlFormatter URL_FORMATTER = new DefaultTileUrlFormatter();
-    private final URL mUrl;
+    private final Random mRandom = new Random();
+    private final URL[] mUrls;
     private final String[] mTilePath;
 
     private HttpEngine.Factory mHttpFactory;
@@ -96,7 +98,7 @@ public abstract class UrlTileSource extends TileSource {
         super(builder);
         mKeyName = builder.keyName;
         mApiKey = builder.apiKey;
-        mUrl = makeUrl(builder.url);
+        mUrls = makeUrl(builder.urls);
         mTilePath = builder.tilePath.split("\\{|\\}");
         mHttpFactory = builder.engineFactory;
     }
@@ -107,7 +109,7 @@ public abstract class UrlTileSource extends TileSource {
 
     protected UrlTileSource(String urlString, String tilePath, int zoomMin, int zoomMax) {
         super(zoomMin, zoomMax);
-        mUrl = makeUrl(urlString);
+        mUrls = makeUrl(urlString);
         mTilePath = makeTilePath(tilePath);
     }
 
@@ -118,14 +120,16 @@ public abstract class UrlTileSource extends TileSource {
         return tilePath.split("\\{|\\}");
     }
 
-    private URL makeUrl(String urlString) {
-        URL url;
-        try {
-            url = new URL(urlString);
-        } catch (MalformedURLException e) {
-            throw new IllegalArgumentException(e);
+    private URL[] makeUrl(String... urlStrings) {
+        URL[] urls = new URL[urlStrings.length];
+        for (int i = 0; i < urlStrings.length; i++) {
+            try {
+                urls[i] = new URL(urlStrings[i]);
+            } catch (MalformedURLException e) {
+                throw new IllegalArgumentException(e);
+            }
         }
-        return url;
+        return urls;
     }
 
     @Override
@@ -143,12 +147,12 @@ public abstract class UrlTileSource extends TileSource {
     }
 
     public URL getUrl() {
-        return mUrl;
+        return mUrls[mRandom.nextInt(mUrls.length)];
     }
 
     public String getTileUrl(Tile tile) {
         StringBuilder sb = new StringBuilder();
-        sb.append(mUrl).append(mTileUrlFormatter.formatTilePath(this, tile));
+        sb.append(getUrl()).append(mTileUrlFormatter.formatTilePath(this, tile));
         if (mApiKey != null) {
             sb.append("?").append(mKeyName).append("=").append(mApiKey);
         }

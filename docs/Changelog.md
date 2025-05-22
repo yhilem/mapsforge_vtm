@@ -2,6 +2,28 @@
 
 ## Next version
 
+- Motorider map theme improvements [#1183](https://github.com/mapsforge/vtm/issues/1183)
+- Biker map theme improvements [#1192](https://github.com/mapsforge/vtm/issues/1192)
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.26.0)
+
+## Version 0.25.0 (2025-04-04)
+
+- Hillshading from HGT digital elevation model data [#1189](https://github.com/mapsforge/vtm/pull/1189)
+  - `vtm-hillshading` module
+- Online tiles support multiple servers [#1196](https://github.com/mapsforge/vtm/pull/1196)
+- Render theme tessellation improvements [#1202](https://github.com/mapsforge/vtm/pull/1202) [#1207](https://github.com/mapsforge/vtm/pull/1207)
+- Motorider map theme improvements [#1183](https://github.com/mapsforge/vtm/issues/1183)
+- Biker map theme improvements [#1192](https://github.com/mapsforge/vtm/issues/1192)
+- Rename `MapDatabase` to `MapFile` [#1184](https://github.com/mapsforge/vtm/pull/1184)
+  - Rename `MultiMapDatabase` to `MultiMapFile`
+- Update MapBox vector tile dependency [#1199](https://github.com/mapsforge/vtm/pull/1199)
+- Disable `vtm-android-gdx` [#1211](https://github.com/mapsforge/vtm/pull/1211)
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.25.0)
+
+## Version 0.24.0 (2025-03-03)
+
 - Android native libs for 16 KB page size [#1179](https://github.com/mapsforge/vtm/pull/1179)
 - Multi-map `MapFileTileSource.setPriority` [#1176](https://github.com/mapsforge/vtm/pull/1176)
 - Color filter theme resources [#1175](https://github.com/mapsforge/vtm/pull/1175)
@@ -13,11 +35,11 @@
 - Libtess2 v1.0.1 [#1178](https://github.com/mapsforge/vtm/pull/1178)
 - Disable `vtm-ios` [#1166](https://github.com/mapsforge/vtm/pull/1166)
 - Remove `vtm-theme-comparator` [#1169](https://github.com/mapsforge/vtm/pull/1169)
+- Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.24.0)
 
 ## Version 0.23.0 (2025-02-22)
 
-- Android native libs for 16 KB page size [#1162](https://github.com/mapsforge/vtm/pull/1162)
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.23.0)
 
@@ -41,14 +63,14 @@
 
 ## Version 0.20.0 (2023-08-15)
 
-- Motorider map theme [#1045](https://github.com/mapsforge/vtm/pull/1045)
+- Motorider map theme [#1183](https://github.com/mapsforge/vtm/issues/1183)
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.20.0)
 
 ## Version 0.19.0 (2023-04-26)
 
 - Render themes: line texture improvements [#1008](https://github.com/mapsforge/vtm/pull/1008)
-- Biker map theme [#995](https://github.com/mapsforge/vtm/pull/995)
+- Biker map theme [#1192](https://github.com/mapsforge/vtm/issues/1192)
 - MVT simplification [#956](https://github.com/mapsforge/vtm/pull/956)
   - `Parameters.SIMPLIFICATION_TOLERANCE`, `Parameters.SIMPLIFICATION_EXCEPTIONS`
 - libGDX 1.11.0 [#972](https://github.com/mapsforge/vtm/pull/972) [#977](https://github.com/mapsforge/vtm/pull/977)
@@ -103,7 +125,7 @@
 - More mutable itemized layer [#771](https://github.com/mapsforge/vtm/pull/771)
 - Marker renderer sort option
   - `Parameters.MARKER_SORT`
-- Update vtm-jeo module [#770](https://github.com/mapsforge/vtm/pull/770)
+- Update `vtm-jeo` module [#770](https://github.com/mapsforge/vtm/pull/770)
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.14.0)
 
@@ -125,10 +147,10 @@
 ## Version 0.12.0 (2019-09-17)
 
 - MBTiles vector tile source (Android) [#740](https://github.com/mapsforge/vtm/pull/740)
-  - vtm-android-mvt module
+  - `vtm-android-mvt` module
 - Render themes: text background color [#737](https://github.com/mapsforge/vtm/pull/737)
-- vtm-desktop-lwjgl module [#714](https://github.com/mapsforge/vtm/pull/714)
-- vtm-desktop-lwjgl3 module [#717](https://github.com/mapsforge/vtm/pull/717)
+- `vtm-desktop-lwjgl` module [#714](https://github.com/mapsforge/vtm/pull/714)
+- `vtm-desktop-lwjgl3` module [#717](https://github.com/mapsforge/vtm/pull/717)
 - Fix marker touch events [#723](https://github.com/mapsforge/vtm/issues/723)
 - Calculation of centroids for all polygons [#734](https://github.com/mapsforge/vtm/pull/734)
   - `Parameters.POLY_CENTROID`
@@ -155,8 +177,8 @@
 - PathLayer(s) scaled width [#594](https://github.com/mapsforge/vtm/issues/594)
 - Mapilion MVT vector tiles & Hillshading [#614](https://github.com/mapsforge/vtm/issues/614)
 - Overpass tile source [#663](https://github.com/mapsforge/vtm/issues/663)
-- vtm-gdx-poi3d module [#600](https://github.com/mapsforge/vtm/pull/600)
-- vtm-models module [#580](https://github.com/mapsforge/vtm/issues/580)
+- `vtm-gdx-poi3d` module [#600](https://github.com/mapsforge/vtm/pull/600)
+- `vtm-models` module [#580](https://github.com/mapsforge/vtm/issues/580)
 - `ViewController` refactor [#625](https://github.com/mapsforge/vtm/pull/625)
   - `getMapViewCenter`, `setMapViewCenter` with pivotX, pivotY
 - `ThemeCallback.getColor` refactor [#274](https://github.com/mapsforge/vtm/issues/274)
@@ -178,7 +200,7 @@
 - Buildings overzoom [#503](https://github.com/mapsforge/vtm/issues/503)
 - Labels / symbols overzoom [#544](https://github.com/mapsforge/vtm/pull/544)
 - S3DB layer [#475](https://github.com/mapsforge/vtm/pull/475)
-- vtm-mvt module with MVT tile decoder [#481](https://github.com/mapsforge/vtm/pull/481)
+- `vtm-mvt` module with MVT tile decoder [#481](https://github.com/mapsforge/vtm/pull/481)
 - Nextzen MVT / GeoJSON vector tiles [#498](https://github.com/mapsforge/vtm/issues/498)
 - OpenMapTiles MVT vector tiles [#482](https://github.com/mapsforge/vtm/issues/482)
 - Location texture renderer [#547](https://github.com/mapsforge/vtm/issues/547)
@@ -241,9 +263,9 @@
 - Polygon symbol positioning [#405](https://github.com/mapsforge/vtm/issues/405)
 - PolyLabel default disabled [#402](https://github.com/mapsforge/vtm/issues/402)
   - `Parameters.POLY_LABEL`
-- vtm-theme-comparator module [#387](https://github.com/mapsforge/vtm/issues/387)
+- `vtm-theme-comparator` module [#387](https://github.com/mapsforge/vtm/issues/387)
 - Feature parameters [#403](https://github.com/mapsforge/vtm/issues/403)
-- vtm-android-gdx module enhancements [#435](https://github.com/mapsforge/vtm/issues/435)
+- `vtm-android-gdx` module enhancements [#435](https://github.com/mapsforge/vtm/issues/435)
 - Gradle 4 / Android plugin 3 support [#433](https://github.com/mapsforge/vtm/issues/433)
 - libGDX 1.9.7 [#434](https://github.com/mapsforge/vtm/issues/434)
 - Internal render themes various improvements [#41](https://github.com/mapsforge/vtm/issues/41)
@@ -262,9 +284,9 @@
   - `Parameters.POT_TEXTURES`
 - OkHttp external cache [#135](https://github.com/mapsforge/vtm/issues/135)
 - Texture atlas improvements [#301](https://github.com/mapsforge/vtm/pull/301) [#304](https://github.com/mapsforge/vtm/pull/304)
-- vtm-json module [#367](https://github.com/mapsforge/vtm/issues/367)
+- `vtm-json` module [#367](https://github.com/mapsforge/vtm/issues/367)
 - Mapzen GeoJSON vector tiles [#55](https://github.com/mapsforge/vtm/issues/55)
-- vtm-ios-example module [#326](https://github.com/mapsforge/vtm/issues/326)
+- `vtm-ios-example` module [#326](https://github.com/mapsforge/vtm/issues/326)
 - Handle layers enabled state [#342](https://github.com/mapsforge/vtm/issues/342)
 - Fix coord scale short overflow [#343](https://github.com/mapsforge/vtm/issues/343)
 - Mapsforge map read improvements [#357](https://github.com/mapsforge/vtm/issues/357) [#370](https://github.com/mapsforge/vtm/issues/370)
@@ -282,7 +304,7 @@
 - New gestures implementation [#253](https://github.com/mapsforge/vtm/issues/253)
   - `Parameters.MAP_EVENT_LAYER2`
 - Polygon label position enhancements [#80](https://github.com/mapsforge/vtm/issues/80)
-- vtm-web modules update [#51](https://github.com/mapsforge/vtm/issues/51)
+- `vtm-web` modules update [#51](https://github.com/mapsforge/vtm/issues/51)
 - Mapzen MVT vector tiles [#57](https://github.com/mapsforge/vtm/issues/57)
 - SVG resources scaling in themes [#214](https://github.com/mapsforge/vtm/issues/214)
 - Circle map style [#122](https://github.com/mapsforge/vtm/issues/122)
@@ -309,7 +331,7 @@
 - Mapsforge maps **v4** support [#34](https://github.com/mapsforge/vtm/issues/34)
 - Render theme SVG resources [#60](https://github.com/mapsforge/vtm/issues/60)
 - Render theme styles [#93](https://github.com/mapsforge/vtm/issues/93)
-- vtm-ios module update [#29](https://github.com/mapsforge/vtm/issues/29)
+- `vtm-ios` module update [#29](https://github.com/mapsforge/vtm/issues/29)
 - Native libraries for all platforms [#14](https://github.com/mapsforge/vtm/issues/14)
 - Line stipple and texture rendering [#105](https://github.com/mapsforge/vtm/issues/105)
 - Group layer implementation [#99](https://github.com/mapsforge/vtm/issues/99)
@@ -325,8 +347,8 @@
 - Render theme from Android assets [#162](https://github.com/mapsforge/vtm/issues/162)
 - Graphics API platform enhancements [#92](https://github.com/mapsforge/vtm/issues/92)
 - GeoPoint & BoundingBox improvements [#201](https://github.com/mapsforge/vtm/issues/201) [#200](https://github.com/mapsforge/vtm/issues/200)
-- vtm-jts module [#53](https://github.com/mapsforge/vtm/issues/53)
-- vtm-http module [#140](https://github.com/mapsforge/vtm/issues/140)
+- `vtm-jts` module [#53](https://github.com/mapsforge/vtm/issues/53)
+- `vtm-http` module [#140](https://github.com/mapsforge/vtm/issues/140)
 - LWJGL desktop libGDX backend [#129](https://github.com/mapsforge/vtm/issues/129)
 - Available on Maven Central
 - SNAPSHOT builds publish to Sonatype OSSRH [#165](https://github.com/mapsforge/vtm/issues/165)

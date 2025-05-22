@@ -17,63 +17,85 @@
  */
 package org.oscim.test;
 
+import com.badlogic.gdx.Input;
+import org.mapsforge.map.awt.graphics.AwtGraphicFactory;
+import org.mapsforge.map.layer.hills.AdaptiveClasyHillShading;
+import org.mapsforge.map.layer.hills.DemFolderFS;
+import org.oscim.backend.canvas.Color;
 import org.oscim.core.BoundingBox;
 import org.oscim.core.MapPosition;
 import org.oscim.core.Tile;
 import org.oscim.event.Event;
 import org.oscim.gdx.GdxMapApp;
 import org.oscim.gdx.poi3d.Poi3DLayer;
+import org.oscim.layers.tile.bitmap.BitmapTileLayer;
 import org.oscim.layers.tile.buildings.BuildingLayer;
 import org.oscim.layers.tile.buildings.S3DBLayer;
 import org.oscim.layers.tile.vector.VectorTileLayer;
 import org.oscim.layers.tile.vector.labeling.LabelLayer;
 import org.oscim.map.Map;
+import org.oscim.map.Viewport;
 import org.oscim.renderer.BitmapRenderer;
 import org.oscim.renderer.ExtrusionRenderer;
 import org.oscim.renderer.GLViewport;
 import org.oscim.scalebar.*;
+import org.oscim.theme.ExternalRenderTheme;
 import org.oscim.theme.internal.VtmThemes;
+import org.oscim.tiling.source.hills.HillshadingTileSource;
 import org.oscim.tiling.source.mapfile.MapFileTileSource;
 import org.oscim.tiling.source.mapfile.MultiMapFileTileSource;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 
 public class MapsforgeTest extends GdxMapApp {
 
     private static final boolean SHADOWS = false;
 
+    private final File demFolder;
     private final List<File> mapFiles;
     private final boolean poi3d;
     private final boolean s3db;
+    private final File themeFile;
 
-    MapsforgeTest(List<File> mapFiles) {
-        this(mapFiles, false, false);
+    MapsforgeTest(File demFolder, List<File> mapFiles, File themeFile) {
+        this(demFolder, mapFiles, false, false, themeFile);
     }
 
-    MapsforgeTest(List<File> mapFiles, boolean s3db, boolean poi3d) {
+    MapsforgeTest(File demFolder, List<File> mapFiles, boolean s3db, boolean poi3d, File themeFile) {
+        this.demFolder = demFolder;
         this.mapFiles = mapFiles;
         this.s3db = s3db;
         this.poi3d = poi3d;
+        this.themeFile = themeFile;
     }
 
     @Override
     public void createLayers() {
-        MultiMapFileTileSource tileSource = new MultiMapFileTileSource();
+        MultiMapFileTileSource multiMapFileTileSource = new MultiMapFileTileSource();
         for (File mapFile : mapFiles) {
             MapFileTileSource mapFileTileSource = new MapFileTileSource();
             mapFileTileSource.setMapFile(mapFile.getAbsolutePath());
             if ("world.map".equalsIgnoreCase(mapFile.getName()))
                 mapFileTileSource.setPriority(-1);
-            tileSource.add(mapFileTileSource);
+            multiMapFileTileSource.add(mapFileTileSource);
         }
-        //tileSource.setDeduplicate(true);
-        //tileSource.setPreferredLanguage("en");
+        //multiMapFileTileSource.setDeduplicate(true);
+        //multiMapFileTileSource.setPreferredLanguage("en");
 
-        VectorTileLayer l = mMap.setBaseMap(tileSource);
+        VectorTileLayer l = mMap.setBaseMap(multiMapFileTileSource);
         loadTheme(null);
+
+        if (demFolder != null) {
+            final AdaptiveClasyHillShading algorithm = new AdaptiveClasyHillShading()
+                    // You can make additional behavior adjustments
+                    .setAdaptiveZoomEnabled(true)
+                    // .setZoomMinOverride(0)
+                    // .setZoomMaxOverride(17)
+                    .setCustomQualityScale(1);
+            final HillshadingTileSource hillshadingTileSource = new HillshadingTileSource(Viewport.MIN_ZOOM_LEVEL, Viewport.MAX_ZOOM_LEVEL, new DemFolderFS(demFolder), algorithm, 128, Color.BLACK, AwtGraphicFactory.INSTANCE);
+            mMap.layers().add(new BitmapTileLayer(mMap, hillshadingTileSource, 150));
+        }
 
         BuildingLayer buildingLayer = s3db ? new S3DBLayer(mMap, l, SHADOWS) : new BuildingLayer(mMap, l, false, SHADOWS);
         mMap.layers().add(buildingLayer);
@@ -96,7 +118,7 @@ public class MapsforgeTest extends GdxMapApp {
         mMap.layers().add(mapScaleBarLayer);
 
         MapPosition pos = MapPreferences.getMapPosition();
-        BoundingBox bbox = tileSource.getBoundingBox();
+        BoundingBox bbox = multiMapFileTileSource.getBoundingBox();
         if (pos == null || !bbox.contains(pos.getGeoPoint())) {
             pos = new MapPosition();
             pos.setByBoundingBox(bbox, Tile.SIZE * 4, Tile.SIZE * 4);
@@ -133,6 +155,31 @@ public class MapsforgeTest extends GdxMapApp {
         super.dispose();
     }
 
+    @Override
+    protected boolean onKeyDown(int keycode) {
+        if (keycode == Input.Keys.F5) {
+            if (themeFile != null) {
+                mMap.setTheme(new ExternalRenderTheme(themeFile.getAbsolutePath()));
+                mMap.clearMap();
+            }
+            return true;
+        }
+
+        return false;
+    }
+
+    static File getDemFolder(String[] args) {
+        if (args.length == 0) {
+            throw new IllegalArgumentException("missing argument: <mapFile>");
+        }
+
+        File demFolder = new File(args[0]);
+        if (demFolder.exists() && demFolder.isDirectory() && demFolder.canRead()) {
+            return demFolder;
+        }
+        return null;
+    }
+
     static List<File> getMapFiles(String[] args) {
         if (args.length == 0) {
             throw new IllegalArgumentException("missing argument: <mapFile>");
@@ -153,12 +200,35 @@ public class MapsforgeTest extends GdxMapApp {
         return result;
     }
 
-    void loadTheme(final String styleId) {
-        mMap.setTheme(VtmThemes.MOTORIDER);
+    static File getThemeFile(String[] args) {
+        if (args.length == 0) {
+            throw new IllegalArgumentException("missing argument: <mapFile>");
+        }
+
+        File themeFile = new File(args[0]);
+        if (themeFile.exists() && themeFile.isFile() && themeFile.canRead() && themeFile.getName().toLowerCase(Locale.ROOT).endsWith(".xml")) {
+            return themeFile;
+        }
+        return null;
     }
 
+    void loadTheme(final String styleId) {
+        mMap.setTheme(themeFile != null ? new ExternalRenderTheme(themeFile.getAbsolutePath()) : VtmThemes.MOTORIDER);
+    }
+
+    /**
+     * @param args command line args: expects the map files as multiple parameters
+     *             with possible theme file as 1st argument
+     *             and possible SRTM hgt folder as 2nd argument.
+     */
     public static void main(String[] args) {
         GdxMapApp.init();
-        GdxMapApp.run(new MapsforgeTest(getMapFiles(args)));
+        File themeFile = getThemeFile(args);
+        if (themeFile != null)
+            args = Arrays.copyOfRange(args, 1, args.length);
+        File demFolder = getDemFolder(args);
+        if (demFolder != null)
+            args = Arrays.copyOfRange(args, 1, args.length);
+        GdxMapApp.run(new MapsforgeTest(demFolder, getMapFiles(args), themeFile));
     }
 }
