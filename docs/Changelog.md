@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Repeat proximity for labels with same text [#1232](https://github.com/mapsforge/vtm/pull/1232)
+  - `Parameters.REPEAT_PROXIMITY_SQR`
 - `ThemeCallback.getText` method [#1225](https://github.com/mapsforge/vtm/pull/1225)
 - Dark and Indigo map themes [#1229](https://github.com/mapsforge/vtm/issues/1229)
 - Motorider map theme improvements [#1183](https://github.com/mapsforge/vtm/issues/1183)
