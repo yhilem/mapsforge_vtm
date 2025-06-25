@@ -18,6 +18,7 @@ package org.oscim.layers.tile.vector.labeling;
 
 import org.oscim.renderer.bucket.TextItem;
 import org.oscim.utils.geom.OBB2D;
+import org.oscim.utils.Parameters;
 
 final class Label extends TextItem {
     TextItem item;
@@ -60,6 +61,16 @@ final class Label extends TextItem {
             return true;
         }
 
+        return false;
+    }
+
+    public static boolean withinRepeatProximity(Label l1, Label l2) {
+        if (Parameters.REPEAT_PROXIMITY_SQR > 0.0 && shareText(l1, l2)) {
+            // get distance squared between Label centers
+            float dx = l2.bbox.originX - l1.bbox.originX;
+            float dy = l2.bbox.originY - l1.bbox.originY;
+            return (dx * dx + dy * dy) < Parameters.REPEAT_PROXIMITY_SQR;
+        }
         return false;
     }
 

@@ -73,6 +73,11 @@ public final class Parameters {
     public static boolean POLY_CENTROID = true;
 
     /**
+     * Repeat proximity (distance squared) for labels with same text
+     */
+    public static double REPEAT_PROXIMITY_SQR = 16.0;
+
+    /**
      * Optimal placement of labels or symbols on polygons.
      */
     public static boolean POLY_LABEL = false;
