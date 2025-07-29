@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application' version '8.9.3' apply false
+    id 'com.android.application' version '8.10.1' apply false
 }
 
 allprojects {
@@ -19,11 +19,11 @@ allprojects {
     }
 }
 
-static def androidCompileSdk() { return 35 }
+static def androidCompileSdk() { return 36 }
 
 static def androidMinSdk() { return 21 }
 
-static def androidTargetSdk() { return 35 }
+static def androidTargetSdk() { return 36 }
 
 static def versionCode() { return 1 }
 
