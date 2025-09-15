@@ -5,6 +5,11 @@
 - Minor improvements and bug fixes
 - [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.27.0)
 
+## Version 0.26.1 (2025-09-15)
+
+- Minor improvements and bug fixes
+- [Solved issues](https://github.com/mapsforge/vtm/issues?q=is%3Aclosed+milestone%3A0.26.1)
+
 ## Version 0.26.0 (2025-09-14)
 
 - Repeat proximity for labels with same text [#1232](https://github.com/mapsforge/vtm/pull/1232)

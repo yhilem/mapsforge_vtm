@@ -70,9 +70,9 @@ runtimeOnly 'org.lwjgl:lwjgl:3.3.1:natives-windows'
 
 ```groovy
 implementation 'com.github.mapsforge.vtm:vtm-hillshading:[CURRENT-VERSION]'
-implementation 'com.github.mapsforge.mapsforge:mapsforge-core:0.26.0'
-implementation 'com.github.mapsforge.mapsforge:mapsforge-map:0.26.0'
-implementation 'com.github.mapsforge.mapsforge:mapsforge-map-android:0.26.0'
+implementation 'com.github.mapsforge.mapsforge:mapsforge-core:[CURRENT-VERSION]'
+implementation 'com.github.mapsforge.mapsforge:mapsforge-map:[CURRENT-VERSION]'
+implementation 'com.github.mapsforge.mapsforge:mapsforge-map-android:[CURRENT-VERSION]'
 ```
 
 ### Overlays
