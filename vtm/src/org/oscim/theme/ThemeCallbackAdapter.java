@@ -21,24 +21,36 @@ import org.oscim.theme.styles.RenderStyle;
 /**
  * Callback methods for render theme.
  */
-public interface ThemeCallback {
+public abstract class ThemeCallbackAdapter implements ThemeCallback {
     /**
      * @return the resource {@link Bitmap}
      */
-    Bitmap getBitmap(Bitmap bitmap);
+    @Override
+    public Bitmap getBitmap(Bitmap bitmap) {
+        return bitmap;
+    }
 
     /**
      * @return the color-int
      */
-    int getColor(RenderStyle origin, int color);
+    @Override
+    public int getColor(RenderStyle origin, int color) {
+        return color;
+    }
 
     /**
      * @return the color-int
      */
-    int getColor(String[] keys, String[] values, int color);
+    @Override
+    public int getColor(String[] keys, String[] values, int color) {
+        return color;
+    }
 
     /**
      * @return the text
      */
-    String getText(MapElement element, String text);
+    @Override
+    public String getText(MapElement element, String text) {
+        return text;
+    }
 }
