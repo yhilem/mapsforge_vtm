@@ -5,6 +5,8 @@
 
 <img src="docs/logo/VTM.svg" style="bottom:0;" width="200" align="right">
 
+OpenGL vector map library - running on Android, iOS, Desktop and browser.
+
 VTM (Vector Tile Map) was developed within the [OpenScienceMap](https://github.com/opensciencemap) project.
 
 **This fork continues VTM development and provides compatibility with [Mapsforge](https://github.com/mapsforge/mapsforge).**
